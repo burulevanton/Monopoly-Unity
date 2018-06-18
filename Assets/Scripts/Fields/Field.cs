@@ -8,5 +8,5 @@ public abstract class Field : MonoBehaviour
 
     [SerializeField]protected string Name;
 
-    public abstract void LandOn(Player player);
+    public abstract IEnumerator LandOn(Player player);
 }

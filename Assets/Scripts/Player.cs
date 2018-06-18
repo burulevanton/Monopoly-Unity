@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
@@ -19,11 +18,23 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	private Field _currentLocation;
+	public Field CurrentLocation { get; set; }
 
-	public void MoveTo(Field location)
+	public IEnumerator MoveTo(Field location)
 	{
-		transform.DOMove(location.transform.position, 2f);
-		location.LandOn(this);
+		Vector3 startPosition = CurrentLocation.transform.position;
+		Vector3 endPosition = location.transform.position;
+		float pathLength = Vector2.Distance(startPosition, endPosition);
+		float totalTimeForPath = pathLength / 1f;
+		float lastSwitchTime = Time.time;
+		while (transform.position != location.transform.position)
+		{
+			float currentTimeOnPath = Time.time - lastSwitchTime;
+			transform.position = Vector2.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
+			yield return null;
+		}
+
+		yield return new WaitForSeconds(2f);
+		yield return location.LandOn(this);
 	}
 }
