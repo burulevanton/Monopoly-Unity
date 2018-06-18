@@ -120,6 +120,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.0777285
@@ -162,9 +167,55 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: f7c40dd9aa5ec0142926d209741116c5,
         type: 3}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Pentonville Road
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 450
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &93510462 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 93510461}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &107228571
 Prefab:
   m_ObjectHideFlags: 0
@@ -172,6 +223,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4281025404077838, guid: 2d26c7c97bd2b9a4881355260de6f3a6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.3053709
@@ -208,9 +264,40 @@ Prefab:
       propertyPath: m_Name
       value: KingsCrossStation
       objectReference: {fileID: 0}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: Name
+      value: King Cross Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.data[0]
+      value: 
+      objectReference: {fileID: 168076928}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.data[1]
+      value: 
+      objectReference: {fileID: 932802811}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.data[2]
+      value: 
+      objectReference: {fileID: 626940608}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d26c7c97bd2b9a4881355260de6f3a6, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &107228572 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 107228571}
+  m_Script: {fileID: 11500000, guid: 19370980d5a794a40b8774d0f74ff881, type: 3}
 --- !u!1001 &168076927
 Prefab:
   m_ObjectHideFlags: 0
@@ -218,6 +305,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4281025404077838, guid: 2d26c7c97bd2b9a4881355260de6f3a6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.474
@@ -264,9 +356,40 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: Name
+      value: Liverpool St. Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.data[0]
+      value: 
+      objectReference: {fileID: 932802811}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.data[1]
+      value: 
+      objectReference: {fileID: 626940608}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.data[2]
+      value: 
+      objectReference: {fileID: 107228572}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d26c7c97bd2b9a4881355260de6f3a6, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &168076928 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 168076927}
+  m_Script: {fileID: 11500000, guid: 19370980d5a794a40b8774d0f74ff881, type: 3}
 --- !u!1001 &217341439
 Prefab:
   m_ObjectHideFlags: 0
@@ -274,6 +397,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.856
@@ -320,83 +448,55 @@ Prefab:
       propertyPath: m_Name
       value: VineStreet
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Vine Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 220
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 800
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &239968975
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 239968977}
-  - component: {fileID: 239968976}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &239968976
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 239968975}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1878279127
-  m_SortingLayer: 1
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 94aa288833cd2eb4bb35281cfff79b69, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.08, y: 1.86}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
---- !u!4 &239968977
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 239968975}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.49, y: -3.5, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 41
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &217341440 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 217341439}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &393952885
 Prefab:
   m_ObjectHideFlags: 0
@@ -404,6 +504,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114436093348742514, guid: 7e44b62e1907f4d439e18aa39bd337f8,
+        type: 2}
+      propertyPath: _otherUtilities.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4187732211423740, guid: 7e44b62e1907f4d439e18aa39bd337f8, type: 2}
       propertyPath: m_LocalPosition.x
       value: 3.094
@@ -450,9 +555,30 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: a2c4b041e987adb4e9e069c8677afe7a,
         type: 3}
+    - target: {fileID: 114436093348742514, guid: 7e44b62e1907f4d439e18aa39bd337f8,
+        type: 2}
+      propertyPath: Name
+      value: Water Works
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436093348742514, guid: 7e44b62e1907f4d439e18aa39bd337f8,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436093348742514, guid: 7e44b62e1907f4d439e18aa39bd337f8,
+        type: 2}
+      propertyPath: _otherUtilities.Array.data[0]
+      value: 
+      objectReference: {fileID: 1925812159}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e44b62e1907f4d439e18aa39bd337f8, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &393952886 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114436093348742514, guid: 7e44b62e1907f4d439e18aa39bd337f8,
+    type: 2}
+  m_PrefabInternal: {fileID: 393952885}
+  m_Script: {fileID: 11500000, guid: b2b1cdf9bdaf9ac4c97f151a01b7c6ca, type: 3}
 --- !u!1001 &441197389
 Prefab:
   m_ObjectHideFlags: 0
@@ -460,6 +586,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.078
@@ -506,9 +637,55 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Strand
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 220
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 875
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &441197390 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 441197389}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &458524117
 Prefab:
   m_ObjectHideFlags: 0
@@ -516,6 +693,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.854
@@ -562,9 +744,55 @@ Prefab:
       propertyPath: m_Name
       value: BowStreet
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Bow Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 550
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 750
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &458524118 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 458524117}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &470964236
 Prefab:
   m_ObjectHideFlags: 0
@@ -572,6 +800,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.479
@@ -614,9 +847,55 @@ Prefab:
       propertyPath: m_Name
       value: EustonRoad
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Euston Road
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 400
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &470964237 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 470964236}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,7 +997,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Players:
-  - {fileID: 239968975}
+  - {fileID: 0}
+  Board:
+  - {fileID: 591054758}
+  - {fileID: 1092188850}
+  - {fileID: 1149263949}
+  - {fileID: 2069329828}
+  - {fileID: 664556904}
+  - {fileID: 107228572}
+  - {fileID: 1962156227}
+  - {fileID: 1300373064}
+  - {fileID: 470964237}
+  - {fileID: 93510462}
+  - {fileID: 1354041726}
+  - {fileID: 1806013575}
+  - {fileID: 1925812159}
+  - {fileID: 1654191055}
+  - {fileID: 1815163262}
+  - {fileID: 626940608}
+  - {fileID: 458524118}
+  - {fileID: 2123097372}
+  - {fileID: 1529376648}
+  - {fileID: 217341440}
+  - {fileID: 858856346}
+  - {fileID: 441197390}
+  - {fileID: 1228043645}
+  - {fileID: 575074650}
+  - {fileID: 1286890603}
+  - {fileID: 932802811}
+  - {fileID: 1834646241}
+  - {fileID: 2013495852}
+  - {fileID: 393952886}
+  - {fileID: 1805222593}
+  - {fileID: 1437231146}
+  - {fileID: 828156526}
+  - {fileID: 2132452006}
+  - {fileID: 1488101381}
+  - {fileID: 1583308828}
+  - {fileID: 168076928}
+  - {fileID: 547430929}
+  - {fileID: 1843266689}
+  - {fileID: 1210379929}
+  - {fileID: 1732026046}
   Corners:
   - {fileID: 921067721}
   - {fileID: 1274088486}
@@ -795,6 +1115,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd9c1b3b09366b54fbf0b78874a34721, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &547430929 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114491632937454376, guid: bd9c1b3b09366b54fbf0b78874a34721,
+    type: 2}
+  m_PrefabInternal: {fileID: 547430928}
+  m_Script: {fileID: 11500000, guid: 9cad09c9400c809468709679d70fab64, type: 3}
 --- !u!1001 &575074649
 Prefab:
   m_ObjectHideFlags: 0
@@ -802,6 +1128,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.104
@@ -848,9 +1179,55 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Fleet Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 220
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 875
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &575074650 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 575074649}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &591054757
 Prefab:
   m_ObjectHideFlags: 0
@@ -893,6 +1270,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 855aee7d3141e9444b57c9c36cedae66, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &591054758 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114651842850218884, guid: 855aee7d3141e9444b57c9c36cedae66,
+    type: 2}
+  m_PrefabInternal: {fileID: 591054757}
+  m_Script: {fileID: 11500000, guid: 34bc3a124b329bd458e1c2eec46c6b0d, type: 3}
 --- !u!1001 &626940607
 Prefab:
   m_ObjectHideFlags: 0
@@ -900,6 +1283,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4281025404077838, guid: 2d26c7c97bd2b9a4881355260de6f3a6, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.86
@@ -946,9 +1334,40 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: f9847c452acec454cbe77ef81c10a936,
         type: 3}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: Name
+      value: MaryleboneStation
+      objectReference: {fileID: 0}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.data[0]
+      value: 
+      objectReference: {fileID: 168076928}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.data[1]
+      value: 
+      objectReference: {fileID: 932802811}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.data[2]
+      value: 
+      objectReference: {fileID: 107228572}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d26c7c97bd2b9a4881355260de6f3a6, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &626940608 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 626940607}
+  m_Script: {fileID: 11500000, guid: 19370980d5a794a40b8774d0f74ff881, type: 3}
 --- !u!1001 &664556903
 Prefab:
   m_ObjectHideFlags: 0
@@ -988,8 +1407,66 @@ Prefab:
       propertyPath: m_RootOrder
       value: 36
       objectReference: {fileID: 0}
+    - target: {fileID: 114896587307930590, guid: 6f650a657dbbc7e42bb7b9c39a07c607,
+        type: 2}
+      propertyPath: Name
+      value: Income Tax
+      objectReference: {fileID: 0}
+    - target: {fileID: 114896587307930590, guid: 6f650a657dbbc7e42bb7b9c39a07c607,
+        type: 2}
+      propertyPath: _taxCost
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f650a657dbbc7e42bb7b9c39a07c607, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &664556904 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114896587307930590, guid: 6f650a657dbbc7e42bb7b9c39a07c607,
+    type: 2}
+  m_PrefabInternal: {fileID: 664556903}
+  m_Script: {fileID: 11500000, guid: 2530415b570e7654a9395be4187929be, type: 3}
+--- !u!1001 &706959577
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4393948487726472, guid: 582ae2853c5680a48b97c8082cd18146, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393948487726472, guid: 582ae2853c5680a48b97c8082cd18146, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393948487726472, guid: 582ae2853c5680a48b97c8082cd18146, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393948487726472, guid: 582ae2853c5680a48b97c8082cd18146, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393948487726472, guid: 582ae2853c5680a48b97c8082cd18146, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393948487726472, guid: 582ae2853c5680a48b97c8082cd18146, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393948487726472, guid: 582ae2853c5680a48b97c8082cd18146, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393948487726472, guid: 582ae2853c5680a48b97c8082cd18146, type: 2}
+      propertyPath: m_RootOrder
+      value: 41
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 582ae2853c5680a48b97c8082cd18146, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &828156525
 Prefab:
@@ -998,6 +1475,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.476
@@ -1044,9 +1526,55 @@ Prefab:
       propertyPath: m_Name
       value: RegentStreet
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Regent Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 390
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 1100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &828156526 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 828156525}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1 &839088287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,6 +1673,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec26fdd6c91823a4fa385f8faa5c9ad8, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &858856346 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114443018320284918, guid: ec26fdd6c91823a4fa385f8faa5c9ad8,
+    type: 2}
+  m_PrefabInternal: {fileID: 858856345}
+  m_Script: {fileID: 11500000, guid: f3de855e39eb43d459901c74c5a6d2fd, type: 3}
 --- !u!1 &921067721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,6 +1714,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4281025404077838, guid: 2d26c7c97bd2b9a4881355260de6f3a6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.294
@@ -1226,9 +1765,40 @@ Prefab:
       propertyPath: m_Name
       value: FenchurchStStation
       objectReference: {fileID: 0}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: Name
+      value: Fenchurch St. Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.data[0]
+      value: 
+      objectReference: {fileID: 168076928}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.data[1]
+      value: 
+      objectReference: {fileID: 626940608}
+    - target: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+        type: 2}
+      propertyPath: otherRailways.Array.data[2]
+      value: 
+      objectReference: {fileID: 107228572}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d26c7c97bd2b9a4881355260de6f3a6, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &932802811 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114129908098729908, guid: 2d26c7c97bd2b9a4881355260de6f3a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 932802810}
+  m_Script: {fileID: 11500000, guid: 19370980d5a794a40b8774d0f74ff881, type: 3}
 --- !u!1001 &1092188849
 Prefab:
   m_ObjectHideFlags: 0
@@ -1236,6 +1806,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 3.7
@@ -1272,9 +1847,55 @@ Prefab:
       propertyPath: m_Name
       value: OldKentRoad
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Old Kent Road
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 160
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1092188850 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1092188849}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &1149263948
 Prefab:
   m_ObjectHideFlags: 0
@@ -1317,6 +1938,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 831aaa11aa8971345835643457b14978, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1149263949 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114097478139038384, guid: 831aaa11aa8971345835643457b14978,
+    type: 2}
+  m_PrefabInternal: {fileID: 1149263948}
+  m_Script: {fileID: 11500000, guid: ee00a2f591033494bbb41e20875dbf0d, type: 3}
 --- !u!1001 &1210379928
 Prefab:
   m_ObjectHideFlags: 0
@@ -1370,9 +1997,25 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114896587307930590, guid: 6f650a657dbbc7e42bb7b9c39a07c607,
+        type: 2}
+      propertyPath: Name
+      value: "\u0421\u0443\u043F\u0435\u0440 \u041D\u0430\u043B\u043E\u0433"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114896587307930590, guid: 6f650a657dbbc7e42bb7b9c39a07c607,
+        type: 2}
+      propertyPath: _taxCost
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f650a657dbbc7e42bb7b9c39a07c607, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1210379929 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114896587307930590, guid: 6f650a657dbbc7e42bb7b9c39a07c607,
+    type: 2}
+  m_PrefabInternal: {fileID: 1210379928}
+  m_Script: {fileID: 11500000, guid: 2530415b570e7654a9395be4187929be, type: 3}
 --- !u!1001 &1228043644
 Prefab:
   m_ObjectHideFlags: 0
@@ -1429,6 +2072,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd9c1b3b09366b54fbf0b78874a34721, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1228043645 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114491632937454376, guid: bd9c1b3b09366b54fbf0b78874a34721,
+    type: 2}
+  m_PrefabInternal: {fileID: 1228043644}
+  m_Script: {fileID: 11500000, guid: 9cad09c9400c809468709679d70fab64, type: 3}
 --- !u!1 &1274088486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,6 +2113,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.70120287
@@ -1510,9 +2164,55 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Trafalgar Square
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 925
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1286890603 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1286890602}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &1300373063
 Prefab:
   m_ObjectHideFlags: 0
@@ -1555,6 +2255,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd9c1b3b09366b54fbf0b78874a34721, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1300373064 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114491632937454376, guid: bd9c1b3b09366b54fbf0b78874a34721,
+    type: 2}
+  m_PrefabInternal: {fileID: 1300373063}
+  m_Script: {fileID: 11500000, guid: 9cad09c9400c809468709679d70fab64, type: 3}
 --- !u!1001 &1354041725
 Prefab:
   m_ObjectHideFlags: 0
@@ -1597,6 +2303,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11f118fe7e5451e48ac453416acbfb46, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1354041726 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114638607671642036, guid: 11f118fe7e5451e48ac453416acbfb46,
+    type: 2}
+  m_PrefabInternal: {fileID: 1354041725}
+  m_Script: {fileID: 11500000, guid: 78fb5ce8f672a63488581504faa4c0b8, type: 3}
 --- !u!1001 &1437231145
 Prefab:
   m_ObjectHideFlags: 0
@@ -1639,6 +2351,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 467289887b3eee54ca2a34b55b3bfc18, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1437231146 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114515471235653488, guid: 467289887b3eee54ca2a34b55b3bfc18,
+    type: 2}
+  m_PrefabInternal: {fileID: 1437231145}
+  m_Script: {fileID: 11500000, guid: be3c6ce8d51730e428c8f90fd191463b, type: 3}
 --- !u!1001 &1488101380
 Prefab:
   m_ObjectHideFlags: 0
@@ -1689,6 +2407,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 831aaa11aa8971345835643457b14978, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1488101381 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114097478139038384, guid: 831aaa11aa8971345835643457b14978,
+    type: 2}
+  m_PrefabInternal: {fileID: 1488101380}
+  m_Script: {fileID: 11500000, guid: ee00a2f591033494bbb41e20875dbf0d, type: 3}
 --- !u!1001 &1529376647
 Prefab:
   m_ObjectHideFlags: 0
@@ -1696,6 +2420,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.8568968
@@ -1742,9 +2471,55 @@ Prefab:
       propertyPath: m_Name
       value: MarlboroughStreet
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Markborough Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 550
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 750
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1529376648 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1529376647}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &1583308827
 Prefab:
   m_ObjectHideFlags: 0
@@ -1752,6 +2527,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.469
@@ -1798,9 +2578,55 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Bond Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 1200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1583308828 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1583308827}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &1654191054
 Prefab:
   m_ObjectHideFlags: 0
@@ -1808,6 +2634,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.867
@@ -1854,9 +2685,55 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: White Hall
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 625
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1654191055 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1654191054}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &1732026045
 Prefab:
   m_ObjectHideFlags: 0
@@ -1864,6 +2741,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.484
@@ -1906,9 +2788,59 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 400d372ef411e3946a38d4ae4a3d3a77,
         type: 3}
+    - target: {fileID: 1576002595204898, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
+      propertyPath: m_Name
+      value: Mayfair
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: MayFair
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 1400
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 1700
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1732026046 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1732026045}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &1805222592
 Prefab:
   m_ObjectHideFlags: 0
@@ -1916,6 +2848,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 3.695
@@ -1962,9 +2899,55 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Piccadilly
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 850
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 1025
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1805222593 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1805222592}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &1806013574
 Prefab:
   m_ObjectHideFlags: 0
@@ -1972,6 +2955,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.865
@@ -2018,9 +3006,55 @@ Prefab:
       propertyPath: m_Name
       value: PallMall
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Pall Mall
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 625
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1806013575 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1806013574}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &1815163261
 Prefab:
   m_ObjectHideFlags: 0
@@ -2028,6 +3062,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.867
@@ -2074,9 +3113,55 @@ Prefab:
       propertyPath: m_Name
       value: NortmurldAvenue
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Nortmurld Avenue
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 700
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1815163262 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1815163261}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &1834646240
 Prefab:
   m_ObjectHideFlags: 0
@@ -2084,6 +3169,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.8997034
@@ -2130,9 +3220,55 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Leicester Square
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 330
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 975
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1834646241 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1834646240}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &1843266688
 Prefab:
   m_ObjectHideFlags: 0
@@ -2140,6 +3276,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.474
@@ -2186,9 +3327,55 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Park LAne
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 1100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 1300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1843266689 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1843266688}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1 &1846705950
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,6 +3415,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114436093348742514, guid: 7e44b62e1907f4d439e18aa39bd337f8,
+        type: 2}
+      propertyPath: _otherUtilities.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4187732211423740, guid: 7e44b62e1907f4d439e18aa39bd337f8, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.865
@@ -2264,9 +3456,30 @@ Prefab:
       propertyPath: m_Name
       value: ElectricCompany
       objectReference: {fileID: 0}
+    - target: {fileID: 114436093348742514, guid: 7e44b62e1907f4d439e18aa39bd337f8,
+        type: 2}
+      propertyPath: Name
+      value: Electric Company
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436093348742514, guid: 7e44b62e1907f4d439e18aa39bd337f8,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436093348742514, guid: 7e44b62e1907f4d439e18aa39bd337f8,
+        type: 2}
+      propertyPath: _otherUtilities.Array.data[0]
+      value: 
+      objectReference: {fileID: 393952886}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e44b62e1907f4d439e18aa39bd337f8, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1925812159 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114436093348742514, guid: 7e44b62e1907f4d439e18aa39bd337f8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1925812158}
+  m_Script: {fileID: 11500000, guid: b2b1cdf9bdaf9ac4c97f151a01b7c6ca, type: 3}
 --- !u!1001 &1962156226
 Prefab:
   m_ObjectHideFlags: 0
@@ -2274,6 +3487,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.71017903
@@ -2316,9 +3534,55 @@ Prefab:
       propertyPath: m_Name
       value: TheAngelInsligton
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: The Angel Islinngton
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 400
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1962156227 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1962156226}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &2013495851
 Prefab:
   m_ObjectHideFlags: 0
@@ -2326,6 +3590,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.497
@@ -2372,9 +3641,55 @@ Prefab:
       propertyPath: m_Name
       value: CoventryStreet
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Coventry Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 330
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 975
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &2013495852 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 2013495851}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &2069329827
 Prefab:
   m_ObjectHideFlags: 0
@@ -2382,6 +3697,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.5056324
@@ -2424,9 +3744,55 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 10d0a0976f3d5074a92991c070f9f107,
         type: 3}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: White Chapel Road
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 320
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &2069329828 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 2069329827}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}
 --- !u!1001 &2123097371
 Prefab:
   m_ObjectHideFlags: 0
@@ -2477,6 +3843,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 831aaa11aa8971345835643457b14978, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &2123097372 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114097478139038384, guid: 831aaa11aa8971345835643457b14978,
+    type: 2}
+  m_PrefabInternal: {fileID: 2123097371}
+  m_Script: {fileID: 11500000, guid: ee00a2f591033494bbb41e20875dbf0d, type: 3}
 --- !u!1001 &2132452005
 Prefab:
   m_ObjectHideFlags: 0
@@ -2484,6 +3856,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4533588815799784, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.476
@@ -2530,6 +3907,52 @@ Prefab:
       propertyPath: m_Name
       value: OxfordStreet
       objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: Name
+      value: Oxford Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _purchasePrice
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _housePrice
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[0]
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[1]
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[2]
+      value: 390
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[3]
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+        type: 2}
+      propertyPath: _rents.Array.data[4]
+      value: 1100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d609bb44a4de0ef479b3755049251f2b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &2132452006 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114417724637015182, guid: d609bb44a4de0ef479b3755049251f2b,
+    type: 2}
+  m_PrefabInternal: {fileID: 2132452005}
+  m_Script: {fileID: 11500000, guid: a20599d746fdb3248ad90647e9233107, type: 3}

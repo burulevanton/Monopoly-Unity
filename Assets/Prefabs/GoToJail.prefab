@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4720124998412370}
   - component: {fileID: 212781963894611652}
+  - component: {fileID: 114515471235653488}
   m_Layer: 0
   m_Name: GoToJail
   m_TagString: Untagged
@@ -40,6 +41,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &114515471235653488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1338463275205058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be3c6ce8d51730e428c8f90fd191463b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u041E\u0442\u043F\u0440\u0430\u0432\u043B\u044F\u0439\u0442\u0435\u0441\u044C
+    \u0432 \u0442\u044E\u0440\u044C\u043C\u0443"
 --- !u!212 &212781963894611652
 SpriteRenderer:
   m_ObjectHideFlags: 1

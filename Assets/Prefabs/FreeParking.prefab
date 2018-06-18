@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4925683206375008}
   - component: {fileID: 212103705518402966}
+  - component: {fileID: 114443018320284918}
   m_Layer: 0
   m_Name: FreeParking
   m_TagString: Untagged
@@ -40,6 +41,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &114443018320284918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1389321069678748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3de855e39eb43d459901c74c5a6d2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u0411\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u0430\u044F \u043F\u0430\u0440\u043A\u043E\u0432\u043A\u0430"
 --- !u!212 &212103705518402966
 SpriteRenderer:
   m_ObjectHideFlags: 1
