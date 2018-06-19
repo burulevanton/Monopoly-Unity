@@ -23,42 +23,40 @@ public class GameManager : MonoBehaviour
 
 	void Update()
 	{
-		StartCoroutine(PlayGame());
+		if (!Players[0].IsMoving)
+		{
+			var roll1 = Random.Range(1, 7);
+			var roll2 = Random.Range(1, 7);
+			var currentLocation = Array.IndexOf(Board, Players[0].CurrentLocation);
+			var nextLocation = currentLocation + roll1 + roll2;
+			if (nextLocation > 39)
+			{
+				nextLocation -= 40;
+			}
+			StartCoroutine(Players[0].MoveTo(Board[nextLocation]));
+		}
 	}
 
 	public IEnumerator PlayGame()
 	{
-//		for (var i = 0; i < 35; i++)
-//		{
-//			foreach (var player in Players)
-//			{
-//				var roll1 = Random.Range(1, 7);
-//				var roll2 = Random.Range(1, 7);
-//				var currentLocation = Array.IndexOf(Board, player.CurrentLocation);
-//				var nextLocation = currentLocation + roll1 + roll2;
-//				if (nextLocation > 39)
-//				{
-//					nextLocation -= 40;
-//				}
-//				
-//				yield return player.MoveTo(Board[nextLocation]);
-//				player.CurrentLocation = Board[nextLocation];
-//				yield return null;
-//			}
-//		}
-		int count = 0;
-		if (count == 0)
+		var i = 0;
+		while (i < 35)
 		{
-			yield return Players[0].MoveTo(Board[25]);
-			count += 1;
-		}
+				var roll1 = Random.Range(1, 7);
+				var roll2 = Random.Range(1, 7);
+				var currentLocation = Array.IndexOf(Board, Players[0].CurrentLocation);
+				var nextLocation = currentLocation + roll1 + roll2;
+				if (nextLocation > 39)
+				{
+					nextLocation -= 40;
+				}
 
-		if (count == 1)
-		{
-			yield return Players[0].MoveTo(Board[37]);
-			count += 1;
+				yield return StartCoroutine(Players[0].MoveTo(Board[nextLocation]));
+				Debug.Log(string.Format("i={0}",i));
+				Debug.Log(string.Format("roll1={0}",roll1));
+				Debug.Log(string.Format("roll2={0}",roll2));
+			i++;
+			yield return null;
 		}
-		yield return new WaitForSeconds(15f);
-		Debug.Log("Sanya huy sosi");
 	}
 }

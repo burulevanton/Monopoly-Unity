@@ -20,8 +20,21 @@ public class Player : MonoBehaviour
 
 	public Field CurrentLocation { get; set; }
 
+	private bool isMoving;
+
+	public bool IsMoving
+	{
+		get { return isMoving; }
+	}
+
+	public void Start()
+	{
+		isMoving = false;
+	}
+
 	public IEnumerator MoveTo(Field location)
 	{
+		isMoving = true;
 		Vector3 startPosition = CurrentLocation.transform.position;
 		Vector3 endPosition = location.transform.position;
 		float pathLength = Vector2.Distance(startPosition, endPosition);
@@ -33,8 +46,8 @@ public class Player : MonoBehaviour
 			transform.position = Vector2.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
 			yield return null;
 		}
-
-		yield return new WaitForSeconds(2f);
-		yield return location.LandOn(this);
+		this.CurrentLocation = location;
+		location.LandOn(this);
+		isMoving = false;
 	}
 }
