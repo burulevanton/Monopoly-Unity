@@ -10,5 +10,7 @@ public class Tax : Field
 	public override void LandOn(Player player)
 	{
 		Debug.Log(string.Format("Вы попали на поле {0}",this.Name));
+		player.AccountBalance -= _taxCost;
+		Debug.Log(player.AccountBalance);
 	}
 }

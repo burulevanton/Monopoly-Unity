@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
 	{
 		current_player.AccountBalance -= property.PurchasePrice;
 		current_player.Owned.Add(property);
+		property.setOwner(current_player);
 		Debug.Log(current_player.AccountBalance);
 	}
 

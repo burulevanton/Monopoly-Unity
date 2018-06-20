@@ -27,15 +27,35 @@ public class Player : MonoBehaviour
 		get { return isMoving; }
 	}
 
-	public List<Ownable> Owned { get; set; }
+	public List<Ownable> Owned{ get; private set; }
 	
-	public List<Ownable> Mortgaged { get; set; }
+	public List<Ownable> Mortgaged { get; private set; }
+
+	private bool _inJail;
+
+	public bool InJail
+	{
+		get { return _inJail; }
+	}
+
+	public void GetOutOfJail()
+	{
+		_inJail = false;
+		Debug.Log("Вы вышли из тюрьмы");
+	}
+
+	public void GoToJail()
+	{
+		_inJail = true;
+		Debug.Log("Вы отправлены в тюрьму");
+	}
 
 	public void Start()
 	{
 		isMoving = false;
 		Owned = new List<Ownable>();
 		Mortgaged = new List<Ownable>();
+		_inJail = false;
 	}
 
 	public IEnumerator MoveTo(Field location)

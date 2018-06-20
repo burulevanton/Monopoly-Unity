@@ -8,6 +8,17 @@ public abstract class Ownable : Field
 
 	protected Player Owner;
 
+	public void setOwner(Player player)
+	{
+		Owner = player;
+	}
+
+	void Awake()
+	{
+		Owner = null;
+		IsMortgage = false;
+	}
+
 	[SerializeField] private int _purchasePrice;
 
 	public int PurchasePrice
@@ -15,11 +26,36 @@ public abstract class Ownable : Field
 		get { return _purchasePrice; }
 	}
 
-	private bool _isMortgage;
+	protected bool IsMortgage;
+
+	public void Mortgage()
+	{
+		IsMortgage = true;
+	}
+
+	public void UnMortgage()
+	{
+		IsMortgage = false;
+	}
 
 	public override void LandOn(Player player)
 	{
 		Debug.Log(string.Format("Вы попали на поле {0}",this.Name));
+		if (this.Owner == null)
+		{
+			UIManager uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
+			uiManager.OfferBuyProperty();
+		}
+		else
+		{
+			if(this.Owner == player)
+				Debug.Log("Вы уже купили данное поле" + string.Format("текущая аренда {0}",Rent()));
+			else
+			{
+				if (!this.IsMortgage)
+					player.AccountBalance -= Rent();
+			}
+		}
 	}
 
 	protected abstract int Rent();

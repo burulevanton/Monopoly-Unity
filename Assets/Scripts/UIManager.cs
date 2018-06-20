@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 
 	private GameManager _gameManager;
 	[SerializeField]private ItemList _itemList;
+	[SerializeField] private BuyPropertyQuestion _buyPropertyQuestion;
 
 	// Use this for initialization
 	void Start ()
@@ -29,6 +30,11 @@ public class UIManager : MonoBehaviour
 		b.gameObject.SetActive(true);
 	}
 
+	public void OfferBuyProperty()
+	{
+		_buyPropertyQuestion.gameObject.SetActive(true);
+		StartCoroutine(_buyPropertyQuestion.WaitForPressed());
+	}
 	public void BuyProperty()
 	{
 		_gameManager.BuyProperty((Ownable)_gameManager.current_player.CurrentLocation);

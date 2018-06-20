@@ -31,14 +31,12 @@ public class ItemList : MonoBehaviour {
     }
     void ButtonPressed(Ownable property)
     {
-        UIManager uiManager = this.GetComponentInParent<UIManager>();
         _action(property);
         UpdateList(property);
     }
     void UpdateList(Ownable property) // функция удаления элемента
     {
         vPos = scroll.verticalNormalizedPosition; // запоминаем позицию скролла
-        int j = 0;
         var item = buttons.Find(x => x.GetComponent<ItemButton>().property == property);
         Destroy(item.GetComponent<ItemButton>().gameObject); // удаляем этот элемент из списка
         buttons.Remove(item); // удаляем этот элемент из массива
