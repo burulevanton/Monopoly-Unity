@@ -21,7 +21,10 @@
             <e p="Utility.cs" t="Include" />
           </e>
           <e p="GameManager.cs" t="Include" />
+          <e p="ItemButton.cs" t="Include" />
+          <e p="ItemList.cs" t="Include" />
           <e p="Player.cs" t="Include" />
+          <e p="UIManager.cs" t="Include" />
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />

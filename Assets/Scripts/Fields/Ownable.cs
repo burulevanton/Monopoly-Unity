@@ -9,6 +9,12 @@ public abstract class Ownable : Field
 	protected Player Owner;
 
 	[SerializeField] private int _purchasePrice;
+
+	public int PurchasePrice
+	{
+		get { return _purchasePrice; }
+	}
+
 	private bool _isMortgage;
 
 	public override void LandOn(Player player)

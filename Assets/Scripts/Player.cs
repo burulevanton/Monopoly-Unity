@@ -27,9 +27,15 @@ public class Player : MonoBehaviour
 		get { return isMoving; }
 	}
 
+	public List<Ownable> Owned { get; set; }
+	
+	public List<Ownable> Mortgaged { get; set; }
+
 	public void Start()
 	{
 		isMoving = false;
+		Owned = new List<Ownable>();
+		Mortgaged = new List<Ownable>();
 	}
 
 	public IEnumerator MoveTo(Field location)
@@ -38,7 +44,7 @@ public class Player : MonoBehaviour
 		Vector3 startPosition = CurrentLocation.transform.position;
 		Vector3 endPosition = location.transform.position;
 		float pathLength = Vector2.Distance(startPosition, endPosition);
-		float totalTimeForPath = pathLength / 1f;
+		float totalTimeForPath = pathLength / 10f;
 		float lastSwitchTime = Time.time;
 		while (transform.position != location.transform.position)
 		{
