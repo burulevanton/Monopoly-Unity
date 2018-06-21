@@ -10,11 +10,20 @@ public class UIManager : MonoBehaviour
 	private GameManager _gameManager;
 	[SerializeField]private ItemList _itemList;
 	[SerializeField] private BuyPropertyQuestion _buyPropertyQuestion;
+	[SerializeField] private Button _upgradeButton;
+	[SerializeField] private Button _sellButton;
+	public BuyHouse BuyHouse;
 
 	// Use this for initialization
 	void Start ()
 	{
 		_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+	}
+
+	void Update()
+	{
+		_upgradeButton.gameObject.SetActive(_gameManager.CanPlayerUpgradeAnything());
+		_sellButton.gameObject.SetActive(_gameManager.CanPlayerSellAnything());
 	}
 
 	public void RollDice()
@@ -68,5 +77,27 @@ public class UIManager : MonoBehaviour
 	{
 		_gameManager.RedeemProperty(property);
 	}
-	
+
+	public void OfferBuyHouse()
+	{
+		var property = (Street) _gameManager.current_player.Owned[0];
+		BuyHouse.setAction(BuyHouses);
+		StartCoroutine(BuyHouse.CreateForm(property.MaxHouseCanBeBuild()));
+	}
+
+	public void BuyHouses(Street property, int numOfHouses)
+	{
+		_gameManager.BuyHouses((Street) _gameManager.current_player.Owned[0], numOfHouses);
+	}
+	public void OfferSellHouse()
+	{
+		var property = (Street) _gameManager.current_player.Owned[0]; //TODO нормальный выбор
+		BuyHouse.setAction(SellHouses);
+		StartCoroutine(BuyHouse.CreateForm(property.CurrentUpgradeLevel));
+	}
+
+	public void SellHouses(Street property, int numOfHouses)
+	{
+		_gameManager.SellHouses((Street) _gameManager.current_player.Owned[0], numOfHouses);
+	}
 }
