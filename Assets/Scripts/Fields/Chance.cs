@@ -61,7 +61,7 @@ public class Chance : Field
 				break;
 			case 5:
 				//TODO отправка в тюрьму
-				StartCoroutine(player.MoveTo(_gameManager.Board[10]));
+				_gameManager.JailManager.PutPLayerInJail();
 				break;
 			case 6:
 				StartCoroutine(player.MoveTo(_gameManager.Board[5]));

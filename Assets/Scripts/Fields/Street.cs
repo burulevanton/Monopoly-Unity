@@ -61,7 +61,7 @@ public class Street : Ownable
 		return true;
 	}
 
-	public int MaxHouseCanBeBuild()
+	public int MaxHouseCanBeBuild() //TODO ориентация на деньги игрока
 	{
 		return 4 - _currentUpgradeLevel;
 	}

@@ -8,6 +8,7 @@
         <e p="Scripts" t="Include">
           <e p="BuyHouse.cs" t="Include" />
           <e p="BuyPropertyQuestion.cs" t="Include" />
+          <e p="DiceRoller.cs" t="Include" />
           <e p="Fields" t="Include">
             <e p="Chance.cs" t="Include" />
             <e p="CommunityChest.cs" t="Include" />
@@ -25,6 +26,8 @@
           <e p="GameManager.cs" t="Include" />
           <e p="ItemButton.cs" t="Include" />
           <e p="ItemList.cs" t="Include" />
+          <e p="JailManager.cs" t="Include" />
+          <e p="JailUI.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="UIManager.cs" t="Include" />
         </e>

@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoToJail : Field {
+public class GoToJail : Field
+{
+    private GameManager _gameManager;
+    void Awake()
+    {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
     public override void LandOn(Player player)
     {
         Debug.Log(string.Format("Вы попали на поле {0}",this.Name));
-        Field[] Board = GameObject.Find("GameManager").GetComponent<GameManager>().Board;
-        player.GoToJail();
-        StartCoroutine(player.MoveTo(Board[10]));
+        _gameManager.JailManager.PutPLayerInJail();
     }
 }

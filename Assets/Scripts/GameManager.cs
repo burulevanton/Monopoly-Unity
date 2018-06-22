@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using UnityEditor;
 using UnityEngine;
+using UnityScript.Steps;
 using Random = UnityEngine.Random;
 
 
@@ -17,6 +18,9 @@ public class GameManager : MonoBehaviour
 	public GameObject[] Corners; //TODO круговой маршрут
 	public Queue<int> ChanceCards;
 	public Queue<int> PublicTreasuryCards;
+	public DiceRoller DiceRoller;
+	public JailManager JailManager;
+	private bool _gameInProgress;
 
 	private void Start()
 	{
@@ -29,26 +33,37 @@ public class GameManager : MonoBehaviour
 			ChanceCards.Enqueue(i);
 			PublicTreasuryCards.Enqueue(i);
 		}
+
+		_gameInProgress = false;
 	}
 
 	void Update()
 	{
-		
+		if (!_gameInProgress)
+		{
+			_gameInProgress = true;
+			StartCoroutine(Game());
+		}
 	}
 
+	private IEnumerator Game()
+	{
+		if (current_player.InJail)
+			yield return StartCoroutine(JailManager.TurnInJail());
+	}
+
+	public int NextLocation()
+	{
+		var currentLocation = Array.IndexOf(Board, Players[0].CurrentLocation);
+		var nextLocation = currentLocation + DiceRoller.CurrentRoll();
+		return nextLocation > 39 ? nextLocation - 40 : nextLocation;
+	}
 	public IEnumerator RollDice()
 	{
-		var roll1 = Random.Range(1, 7);
-		var roll2 = Random.Range(1, 7);
-		var currentLocation = Array.IndexOf(Board, Players[0].CurrentLocation);
-		var nextLocation = currentLocation + roll1 + roll2;
-		if (nextLocation > 39)
-		{
-			nextLocation -= 40;
-		}
-		yield return StartCoroutine(Players[0].MoveTo(Board[nextLocation]));
+		DiceRoller.RollDice();
+		yield return StartCoroutine(Players[0].MoveTo(Board[NextLocation()]));
 	}
-
+	
 	public void BuyProperty(Ownable property)
 	{
 		current_player.AccountBalance -= property.PurchasePrice;

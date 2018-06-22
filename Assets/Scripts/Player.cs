@@ -31,32 +31,34 @@ public class Player : MonoBehaviour
 	
 	public List<Ownable> Mortgaged { get; private set; }
 
-	private bool _inJail;
-
-	public bool InJail
-	{
-		get { return _inJail; }
-	}
-
-	public void GetOutOfJail()
-	{
-		_inJail = false;
-		Debug.Log("Вы вышли из тюрьмы");
-	}
-
-	public void GoToJail()
-	{
-		_inJail = true;
-		Debug.Log("Вы отправлены в тюрьму");
-	}
+	public int NumOfTurnsInJail { get; set; }
+	
+	public bool InJail { get; set; }
 
 	public void Start()
 	{
 		isMoving = false;
 		Owned = new List<Ownable>();
 		Mortgaged = new List<Ownable>();
-		_inJail = false;
+		NumOfTurnsInJail = 0;
+		InJail = false;
 	}
+
+	public enum State
+	{
+		StartTurn,
+		Moving,
+		OfferToBuyProperty,
+		OfferToMortgageProperty,
+		OfferToRedeemProperty,
+		OfferToBuyHouse,
+		OfferToSellHouse,
+		InJail,
+		EndTurn,
+		Idle
+	};
+
+	public State CurrentState { get; set; }
 
 	public IEnumerator MoveTo(Field location)
 	{

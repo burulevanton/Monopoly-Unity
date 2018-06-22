@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private Button _upgradeButton;
 	[SerializeField] private Button _sellButton;
 	public BuyHouse BuyHouse;
+	public JailUI JailUi;
 
 	// Use this for initialization
 	void Start ()
@@ -24,6 +25,7 @@ public class UIManager : MonoBehaviour
 	{
 		_upgradeButton.gameObject.SetActive(_gameManager.CanPlayerUpgradeAnything());
 		_sellButton.gameObject.SetActive(_gameManager.CanPlayerSellAnything());
+		//JailUi.gameObject.SetActive(_gameManager.current_player.InJail);
 	}
 
 	public void RollDice()

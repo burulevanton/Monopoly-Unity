@@ -12,7 +12,7 @@ public class Railway : Ownable
         var rent = 25;
         foreach (var railway in otherRailways)
         {
-            if (railway.Owner == this.Owner)
+            if (railway.Owner == this.Owner && !railway.IsMortgage)
                 rent *= 2;
         }
 

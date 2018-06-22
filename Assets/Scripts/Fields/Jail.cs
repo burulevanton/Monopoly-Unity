@@ -5,7 +5,7 @@ using UnityEngine;
 public class Jail : Field {
     public override void LandOn(Player player)
     {
-        if(!player.InJail)
+        if(player.CurrentState != Player.State.InJail)
             Debug.Log(string.Format("Вы попали на поле {0}",this.Name));
     }
 }
