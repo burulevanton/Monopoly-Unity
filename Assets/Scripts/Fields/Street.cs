@@ -53,12 +53,11 @@ public class Street : Ownable
 		{
 			if (!(Owner == street.Owner))
 				return false;
-			if (IsMortgage)
-				return false;
-			if (street._currentUpgradeLevel > 3)
+			if (street.IsMortgage)
 				return false;
 		}
-		return true;
+
+		return _currentUpgradeLevel <= 3;
 	}
 
 	public int MaxHouseCanBeBuild() //TODO ориентация на деньги игрока

@@ -48,8 +48,16 @@ public class GameManager : MonoBehaviour
 
 	private IEnumerator Game()
 	{
-		if (current_player.InJail)
-			yield return StartCoroutine(JailManager.TurnInJail());
+		yield return StartCoroutine(current_player.MoveTo(Board[1]));
+		yield return new WaitForSeconds(2);
+		yield return StartCoroutine(current_player.MoveTo(Board[3]));
+		yield return new WaitForSeconds(2);
+		while (_gameInProgress)
+		{
+			if (current_player.InJail && current_player.CurrentState == Player.State.StartTurn)
+				yield return StartCoroutine(JailManager.TurnInJail());
+			yield return null;
+		}
 	}
 
 	public int NextLocation()
@@ -77,6 +85,7 @@ public class GameManager : MonoBehaviour
 		current_player.AccountBalance += property.PurchasePrice / 2;
 		current_player.Owned.Remove(property);
 		current_player.Mortgaged.Add(property);
+		property.Mortgage();
 		Debug.Log(current_player.AccountBalance);
 	}
 	public void RedeemProperty(Ownable property)
@@ -84,6 +93,7 @@ public class GameManager : MonoBehaviour
 		current_player.AccountBalance -= (int)(property.PurchasePrice / 2 * 1.1f);
 		current_player.Owned.Add(property);
 		current_player.Mortgaged.Remove(property);
+		property.UnMortgage();
 		Debug.Log(current_player.AccountBalance);
 	}
 

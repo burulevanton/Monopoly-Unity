@@ -25,7 +25,6 @@ public class UIManager : MonoBehaviour
 	{
 		_upgradeButton.gameObject.SetActive(_gameManager.CanPlayerUpgradeAnything());
 		_sellButton.gameObject.SetActive(_gameManager.CanPlayerSellAnything());
-		//JailUi.gameObject.SetActive(_gameManager.current_player.InJail);
 	}
 
 	public void RollDice()
@@ -84,22 +83,23 @@ public class UIManager : MonoBehaviour
 	{
 		var property = (Street) _gameManager.current_player.Owned[0];
 		BuyHouse.setAction(BuyHouses);
-		StartCoroutine(BuyHouse.CreateForm(property.MaxHouseCanBeBuild()));
+		StartCoroutine(BuyHouse.ChoosePropertyToUpgrade());
+		//StartCoroutine(BuyHouse.CreateForm(property.MaxHouseCanBeBuild()));
 	}
 
 	public void BuyHouses(Street property, int numOfHouses)
 	{
-		_gameManager.BuyHouses((Street) _gameManager.current_player.Owned[0], numOfHouses);
+		_gameManager.BuyHouses(property, numOfHouses);
 	}
 	public void OfferSellHouse()
 	{
 		var property = (Street) _gameManager.current_player.Owned[0]; //TODO нормальный выбор
 		BuyHouse.setAction(SellHouses);
-		StartCoroutine(BuyHouse.CreateForm(property.CurrentUpgradeLevel));
+		StartCoroutine(BuyHouse.ChoosePropertyToSellHouse());
 	}
 
 	public void SellHouses(Street property, int numOfHouses)
 	{
-		_gameManager.SellHouses((Street) _gameManager.current_player.Owned[0], numOfHouses);
+		_gameManager.SellHouses(property, numOfHouses);
 	}
 }

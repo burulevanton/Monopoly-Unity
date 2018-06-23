@@ -42,6 +42,7 @@ public class JailManager : MonoBehaviour
 
 	public IEnumerator TurnInJail()
 	{
+		_gameManager.current_player.CurrentState = Player.State.InJail;
 		if(_gameManager.current_player.NumOfTurnsInJail == 3)
 			BuyOutOfJail();
 		else
@@ -49,5 +50,7 @@ public class JailManager : MonoBehaviour
 			_jailUi.gameObject.SetActive(true);
 			yield return StartCoroutine(_jailUi.WaitForPressed());
 		}
+
+		_gameManager.current_player.CurrentState = Player.State.StartTurn;
 	}
 }

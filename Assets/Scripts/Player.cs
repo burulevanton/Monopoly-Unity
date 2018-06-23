@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
 		Mortgaged = new List<Ownable>();
 		NumOfTurnsInJail = 0;
 		InJail = false;
+		CurrentState = State.StartTurn;
 	}
 
 	public enum State
