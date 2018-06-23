@@ -20,7 +20,17 @@ public class GameManager : MonoBehaviour
 	public Queue<int> PublicTreasuryCards;
 	public DiceRoller DiceRoller;
 	public JailManager JailManager;
+	public AuctionManager AuctionManager;
 	private bool _gameInProgress;
+
+	private enum States
+	{
+		Default,
+		Auction,
+		Trade
+	};
+
+	private States _state;
 
 	private void Start()
 	{
@@ -33,16 +43,21 @@ public class GameManager : MonoBehaviour
 			ChanceCards.Enqueue(i);
 			PublicTreasuryCards.Enqueue(i);
 		}
-
+		_state = States.Default;
 		_gameInProgress = false;
 	}
 
 	void Update()
 	{
-		if (!_gameInProgress)
+//		if (!_gameInProgress)
+//		{
+//			_gameInProgress = true;
+//			StartCoroutine(Game());
+//		}
+		if (!_state.Equals(States.Auction))
 		{
-			_gameInProgress = true;
-			StartCoroutine(Game());
+			StartCoroutine(AuctionManager.StartAuction((Ownable)Board[25],Players[0]));
+			_state = States.Auction;
 		}
 	}
 

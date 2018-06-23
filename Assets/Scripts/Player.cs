@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
 		NumOfTurnsInJail = 0;
 		InJail = false;
 		CurrentState = State.StartTurn;
+		PlayerName = string.Format("{0}",Random.Range(1, 100));
 	}
 
 	public enum State
