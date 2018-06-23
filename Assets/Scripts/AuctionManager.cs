@@ -21,7 +21,7 @@ public class AuctionManager : MonoBehaviour
     public Button Accept;
     public Button Exit;
     
-    
+    //TODO добавить возникновение
     void Awake()
     {
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
