@@ -30,6 +30,7 @@
           <e p="JailManager.cs" t="Include" />
           <e p="JailUI.cs" t="Include" />
           <e p="Player.cs" t="Include" />
+          <e p="TradeManager.cs" t="Include" />
           <e p="UIManager.cs" t="Include" />
         </e>
       </e>

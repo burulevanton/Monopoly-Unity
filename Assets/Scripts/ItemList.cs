@@ -16,23 +16,27 @@ public class ItemList : MonoBehaviour {
     private List<RectTransform> buttons;
     private int size;
     private float curY, vPos;
+    private bool _needUpdateAfterClick;
     
     void Awake()
     {
         buttons = new List<RectTransform>();
+
+    }
+
+    public void SetAction(Action<Ownable> action, bool needUpdateAfterClick)
+    {
+        _action = action;
+        _needUpdateAfterClick = needUpdateAfterClick;
         delta = element.sizeDelta;
         delta.y += offset;
         e_Pos = new Vector2(0, -delta.y / 2);
     }
-
-    public void SetAction(Action<Ownable> action)
-    {
-        _action = action;
-    }
     void ButtonPressed(Ownable property)
     {
         _action(property);
-        UpdateList(property);
+        if(_needUpdateAfterClick)
+            UpdateList(property);
     }
     void UpdateList(Ownable property) // функция удаления элемента
     {

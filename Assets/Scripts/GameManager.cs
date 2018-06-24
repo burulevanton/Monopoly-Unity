@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 	public DiceRoller DiceRoller;
 	public JailManager JailManager;
 	public AuctionManager AuctionManager;
+	public TradeManager TradeManager;
 	private bool _gameInProgress;
 
 	private enum States
@@ -54,10 +55,30 @@ public class GameManager : MonoBehaviour
 //			_gameInProgress = true;
 //			StartCoroutine(Game());
 //		}
-		if (!_state.Equals(States.Auction))
+//		if (!_state.Equals(States.Auction))
+//		{
+//			StartCoroutine(AuctionManager.StartAuction((Ownable)Board[25],Players[0]));
+//			_state = States.Auction;
+//		}
+
+		if (!_state.Equals(States.Trade))
 		{
-			StartCoroutine(AuctionManager.StartAuction((Ownable)Board[25],Players[0]));
-			_state = States.Auction;
+			GivePropertyToPlayer(Players[0],Board[1] as Ownable);
+			GivePropertyToPlayer(Players[0],Board[3] as Ownable);
+			GivePropertyToPlayer(Players[0],Board[5] as Ownable);
+			GivePropertyToPlayer(Players[0],Board[6] as Ownable);
+			GivePropertyToPlayer(Players[0],Board[8] as Ownable);
+			GivePropertyToPlayer(Players[0],Board[9] as Ownable);
+			GivePropertyToPlayer(Players[0],Board[11] as Ownable);
+			GivePropertyToPlayer(Players[1],Board[12] as Ownable);
+			GivePropertyToPlayer(Players[1],Board[13] as Ownable);
+			GivePropertyToPlayer(Players[1],Board[14] as Ownable);
+			GivePropertyToPlayer(Players[1],Board[15] as Ownable);
+			GivePropertyToPlayer(Players[1],Board[16] as Ownable);
+			GivePropertyToPlayer(Players[1],Board[18] as Ownable);
+			GivePropertyToPlayer(Players[1],Board[19] as Ownable);
+			_state = States.Trade;
+			TradeManager.StartTrade(Players[0], Players[1]);
 		}
 	}
 
@@ -139,5 +160,18 @@ public class GameManager : MonoBehaviour
 		current_player.AccountBalance += (int) (property.HousePrice * numOfHouses / 2);
 		property.SellHouse(numOfHouses);
 		Debug.Log(current_player.AccountBalance);
+	}
+
+	public void GivePropertyToPlayer(Player player, Ownable property)
+	{
+		player.Owned.Add(property);
+		property.setOwner(player);
+	}
+	public void TransferPropertyBetweenPlayers(Player from, Player to, Ownable property)
+	{
+		from.Owned.Remove(property);
+		to.Owned.Add(property);
+		property.setOwner(to);
+		Debug.Log(string.Format("{0} передаётся от игрока {1} к игроку {2}",property.name, from.name, to.name));
 	}
 }

@@ -53,7 +53,7 @@ public class UIManager : MonoBehaviour
 	public void MortgagePropety()
 	{
 		_itemList.Clear();
-		_itemList.SetAction(MortgageCurrentProperty);
+		_itemList.SetAction(MortgageCurrentProperty,true);
 		foreach (var property in _gameManager.current_player.Owned)
 		{
 			_itemList.AddToList(property, true);	
@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour
 	public void RedeemPropety()
 	{
 		_itemList.Clear();
-		_itemList.SetAction(RedeemCurrentProperty);
+		_itemList.SetAction(RedeemCurrentProperty,true);
 		foreach (var property in _gameManager.current_player.Mortgaged)
 		{
 			_itemList.AddToList(property, true);	
