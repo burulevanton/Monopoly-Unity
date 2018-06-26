@@ -49,12 +49,13 @@ public class BuyHouse : MonoBehaviour
 	}
 	public IEnumerator ChoosePropertyToUpgrade()
 	{
+		_gameManager.CurrentPlayer.CurrentState = Player.State.OfferToBuyHouse;
 		this.gameObject.SetActive(true);
 		ChooseProperty.gameObject.SetActive(true);
 		ItemList.scroll = Scroll;
 		ItemList.Clear();
 		ItemList.SetAction(SetProperty, false);
-		var upgradeProperies = _gameManager.current_player.Owned.FindAll(x => x.GetType() == typeof(Street))
+		var upgradeProperies = _gameManager.CurrentPlayer.Owned.FindAll(x => x.GetType() == typeof(Street))
 			.Select(x => (Street)x).ToList()
 			.FindAll(x=>x.CanUpgrade());
 		foreach (var property in upgradeProperies)
@@ -69,12 +70,13 @@ public class BuyHouse : MonoBehaviour
 
 	public IEnumerator ChoosePropertyToSellHouse()
 	{
+		_gameManager.CurrentPlayer.CurrentState = Player.State.OfferToSellHouse;
 		this.gameObject.SetActive(true);
 		ChooseProperty.gameObject.SetActive(true);
 		ItemList.scroll = Scroll;
 		ItemList.Clear();
 		ItemList.SetAction(SetProperty, false);
-		var sellProperties = _gameManager.current_player.Owned.FindAll(x => x.GetType() == typeof(Street))
+		var sellProperties = _gameManager.CurrentPlayer.Owned.FindAll(x => x.GetType() == typeof(Street))
 			.Select(x => (Street) x).ToList()
 			.FindAll(x => x.CurrentUpgradeLevel > 0);
 		foreach (var property in sellProperties)
@@ -96,5 +98,6 @@ public class BuyHouse : MonoBehaviour
 		ChooseAmount.gameObject.SetActive(false);
 		this.gameObject.SetActive(false);
 		Slider.value = 0;
+		_gameManager.CurrentPlayer.CurrentState = Player.State.Idle;
 	}
 }

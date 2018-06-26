@@ -25,6 +25,7 @@ public class BuyPropertyQuestion : MonoBehaviour
 	public IEnumerator WaitForPressed()
 	{
 		yield return new WaitUntil(() => isPressed == true);
+		
 		this.gameObject.SetActive(false);
 		this.isPressed = false;
 	}

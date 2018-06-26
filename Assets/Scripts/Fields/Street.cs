@@ -9,7 +9,7 @@ public class Street : Ownable
 	[SerializeField] private int _housePrice;
 	[SerializeField] private int[] _rents;
 	[SerializeField] private string _color;
-	[SerializeField] private List<Street> _streets_with_color;
+	[SerializeField] private List<Street> _streetsWithColor;
 
 	public int HousePrice
 	{
@@ -26,7 +26,7 @@ public class Street : Ownable
 	public void Awake()
 	{
 		_currentUpgradeLevel = 0;
-		_streets_with_color.Add(this);
+		_streetsWithColor.Add(this);
 	}
 	
 	protected override int Rent()
@@ -36,7 +36,7 @@ public class Street : Ownable
 
 	private bool CanDouble()
 	{
-		foreach (var street in _streets_with_color)
+		foreach (var street in _streetsWithColor)
 		{
 			if (!(Owner == street.Owner))
 				return false;
@@ -49,7 +49,7 @@ public class Street : Ownable
 	}
 	public bool CanUpgrade()
 	{
-		foreach (var street in _streets_with_color)
+		foreach (var street in _streetsWithColor)
 		{
 			if (!(Owner == street.Owner))
 				return false;

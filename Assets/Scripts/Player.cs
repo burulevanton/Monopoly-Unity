@@ -8,24 +8,26 @@ public class Player : MonoBehaviour
 
 	private int _accountBalance = 1500;
 
-	public int AccountBalance
-	{
-		get { return _accountBalance; }
-		set
-		{
-			_accountBalance = value;
-			//TODO добавить что-то ещё
-		}
-	}
+//	public int AccountBalance
+//	{
+//		get { return _accountBalance; }
+//		set
+//		{
+//			_accountBalance = value;
+//			//TODO добавить что-то ещё
+//		}
+//	}
 
+	public BalanceManager BalanceManager;
+	
 	public Field CurrentLocation { get; set; }
 
-	private bool isMoving;
-
-	public bool IsMoving
-	{
-		get { return isMoving; }
-	}
+//	private bool isMoving;
+//
+//	public bool IsMoving
+//	{
+//		get { return isMoving; }
+//	}
 
 	public List<Ownable> Owned{ get; private set; }
 	
@@ -37,13 +39,13 @@ public class Player : MonoBehaviour
 
 	public void Start()
 	{
-		isMoving = false;
 		Owned = new List<Ownable>();
 		Mortgaged = new List<Ownable>();
 		NumOfTurnsInJail = 0;
 		InJail = false;
 		CurrentState = State.StartTurn;
 		PlayerName = string.Format("{0}",Random.Range(1, 100));
+		BalanceManager = gameObject.AddComponent<BalanceManager>();
 	}
 
 	public enum State
@@ -64,7 +66,7 @@ public class Player : MonoBehaviour
 
 	public IEnumerator MoveTo(Field location)
 	{
-		isMoving = true;
+		CurrentState = State.Moving;
 		Vector3 startPosition = CurrentLocation.transform.position;
 		Vector3 endPosition = location.transform.position;
 		float pathLength = Vector2.Distance(startPosition, endPosition);
@@ -78,6 +80,6 @@ public class Player : MonoBehaviour
 		}
 		this.CurrentLocation = location;
 		location.LandOn(this);
-		isMoving = false;
+		CurrentState = State.Idle;
 	}
 }

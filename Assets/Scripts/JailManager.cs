@@ -15,15 +15,15 @@ public class JailManager : MonoBehaviour
 
 	public void PutPLayerInJail()
 	{
-		_gameManager.current_player.InJail = true;
-		StartCoroutine(_gameManager.current_player.MoveTo(_gameManager.Board[10]));
+		_gameManager.CurrentPlayer.InJail = true;
+		StartCoroutine(_gameManager.CurrentPlayer.MoveTo(_gameManager.Board[10]));
 	}
 
 	public void BuyOutOfJail()
 	{
-		_gameManager.current_player.InJail = false;
-		_gameManager.current_player.NumOfTurnsInJail = 0;
-		_gameManager.current_player.AccountBalance -= 50;
+		_gameManager.CurrentPlayer.InJail = false;
+		_gameManager.CurrentPlayer.NumOfTurnsInJail = 0;
+		_gameManager.CurrentPlayer.BalanceManager.GetMoneyFromPlayer(50); //todo инфа о выходе
 		StartCoroutine(_gameManager.RollDice());
 	}
 
@@ -32,18 +32,18 @@ public class JailManager : MonoBehaviour
 		_gameManager.DiceRoller.RollDice();
 		if (_gameManager.DiceRoller.IsDouble())
 		{
-			_gameManager.current_player.InJail = false;
-			_gameManager.current_player.NumOfTurnsInJail = 0;
-			StartCoroutine(_gameManager.current_player.MoveTo(_gameManager.Board[_gameManager.NextLocation()]));
+			_gameManager.CurrentPlayer.InJail = false;
+			_gameManager.CurrentPlayer.NumOfTurnsInJail = 0;
+			StartCoroutine(_gameManager.CurrentPlayer.MoveTo(_gameManager.Board[_gameManager.NextLocation()]));
 		}
 		else
-			_gameManager.current_player.NumOfTurnsInJail++;
+			_gameManager.CurrentPlayer.NumOfTurnsInJail++;
 	}
 
 	public IEnumerator TurnInJail()
 	{
-		_gameManager.current_player.CurrentState = Player.State.InJail;
-		if(_gameManager.current_player.NumOfTurnsInJail == 3)
+		_gameManager.CurrentPlayer.CurrentState = Player.State.InJail;
+		if(_gameManager.CurrentPlayer.NumOfTurnsInJail == 3)
 			BuyOutOfJail();
 		else
 		{
@@ -51,6 +51,6 @@ public class JailManager : MonoBehaviour
 			yield return StartCoroutine(_jailUi.WaitForPressed());
 		}
 
-		_gameManager.current_player.CurrentState = Player.State.StartTurn;
+		_gameManager.CurrentPlayer.CurrentState = Player.State.Idle;
 	}
 }

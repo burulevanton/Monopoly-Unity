@@ -27,38 +27,38 @@ public class CommunityChest : Field {
 				StartCoroutine(player.MoveTo(_gameManager.Board[0]));
 				break;
 			case 2:
-				player.AccountBalance -= 50;
+				player.BalanceManager.GetMoneyFromPlayer(50);
 				break;
 			case 3:
-				player.AccountBalance += 10;
+				player.BalanceManager.GiveMoneyToPlayer(10);
 				break;
 			case 4:
-				player.AccountBalance += 50;
+				player.BalanceManager.GiveMoneyToPlayer(50);
 				break;
 			case 5:
-				player.AccountBalance += 200;
+				player.BalanceManager.GiveMoneyToPlayer(200);
 				break;
 			case 6:
-				player.AccountBalance -= 100;
+				player.BalanceManager.GetMoneyFromPlayer(100);
 				break;
 			case 7:
-				player.AccountBalance += 100;
+				player.BalanceManager.GiveMoneyToPlayer(100);
 				break;
 			case 8:
 				StartCoroutine(player.MoveTo(_gameManager.Board[20]));
 				break;
 			case 9:
-				player.AccountBalance += 20;
+				player.BalanceManager.GiveMoneyToPlayer(20);
 				break;
 			case 10:
 			case 12:
-				player.AccountBalance += 100;
+				player.BalanceManager.GiveMoneyToPlayer(100);
 				break;
 			case 11:
-				player.AccountBalance -= 50;
+				player.BalanceManager.GetMoneyFromPlayer(50);
 				break;
 			case 13:
-				player.AccountBalance += 25;
+				player.BalanceManager.GiveMoneyToPlayer(25);
 				break;
 		}
 	}

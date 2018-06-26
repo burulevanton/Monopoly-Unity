@@ -18,7 +18,7 @@ public class Chance : Field
 	{
 		Debug.Log(string.Format("Вы попали на поле {0}",this.Name));
 		var numCard = _gameManager.ChanceCards.Dequeue();
-		var index_location = Array.IndexOf(_gameManager.Board, player.CurrentLocation);
+		var indexLocation = Array.IndexOf(_gameManager.Board, player.CurrentLocation);
 		_gameManager.ChanceCards.Enqueue(numCard);
 		//TODO добавить 200 за проход
 		switch (numCard)
@@ -31,7 +31,7 @@ public class Chance : Field
 				break;
 			case 2:
 			case 7:
-				switch (index_location)
+				switch (indexLocation)
 				{
 					case 7:
 						StartCoroutine(player.MoveTo(_gameManager.Board[15]));
@@ -45,10 +45,10 @@ public class Chance : Field
 				}
 				break;
 			case 3:
-				player.AccountBalance += 50;
+				player.BalanceManager.GiveMoneyToPlayer(50);
 				break;
 			case 4:
-				switch (index_location)
+				switch (indexLocation)
 				{
 					case 7:
 					case 36:
@@ -67,19 +67,19 @@ public class Chance : Field
 				StartCoroutine(player.MoveTo(_gameManager.Board[5]));
 				break;
 			case 8:
-				player.AccountBalance -= 15;
+				player.BalanceManager.GetMoneyFromPlayer(15);
 				break; //TODO информирование о потере денег
 			case 9:
 				StartCoroutine(player.MoveTo(_gameManager.Board[20]));
 				break;
 			case 10:
-				player.AccountBalance += 150;
+				player.BalanceManager.GiveMoneyToPlayer(150);
 				break;
 			case 11:
 				StartCoroutine(player.MoveTo(_gameManager.Board[24]));
 				break;
 			case 12:
-				StartCoroutine(player.MoveTo(_gameManager.Board[index_location - 3]));
+				StartCoroutine(player.MoveTo(_gameManager.Board[indexLocation - 3]));
 				break;
 			case 13:
 				StartCoroutine(player.MoveTo(_gameManager.Board[0]));

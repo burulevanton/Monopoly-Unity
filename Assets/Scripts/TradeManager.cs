@@ -101,8 +101,8 @@ public class TradeManager : MonoBehaviour
 	{
 		Player1Name.text = string.Format("Игрок {0}",_player1.PlayerName); 
 		Player2Name.text = string.Format("Игрок {0}",_player2.PlayerName);
-		Player1Balance.text = string.Format("Баланс: {0}Р", _player1.AccountBalance);
-		Player2Balance.text = string.Format("Баланс: {0}Р", _player2.AccountBalance);
+		Player1Balance.text = string.Format("Баланс: {0}Р", _player1.BalanceManager.Balance);
+		Player2Balance.text = string.Format("Баланс: {0}Р", _player2.BalanceManager.Balance);
 		_itemListPlayer1PropertiesLeft = this.gameObject.AddComponent<ItemList>();
 		_itemListPlayer1PropertiesOffer = this.gameObject.AddComponent<ItemList>();
 		_itemListPlayer2PropertiesLeft = this.gameObject.AddComponent<ItemList>();
@@ -209,10 +209,8 @@ public class TradeManager : MonoBehaviour
 			_gameManager.TransferPropertyBetweenPlayers(_player2, _player1, property);
 		}
 
-		_player1.AccountBalance -= _player1OfferMoney;
-		_player2.AccountBalance += _player1OfferMoney;
-		_player1.AccountBalance += _player2OfferMoney;
-		_player2.AccountBalance -= _player2OfferMoney;
+		_player1.BalanceManager.TransferMoneyToPlayer(_player2, _player1OfferMoney);
+		_player2.BalanceManager.TransferMoneyToPlayer(_player1, _player2OfferMoney);
 	}
 
 	private void DeclineTradeOffer()

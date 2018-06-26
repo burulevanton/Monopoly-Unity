@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class Field : MonoBehaviour
 {
 
-    [SerializeField]protected string Name;
+    [SerializeField]protected string Name; //todo сделать что-то с именем
 
     public abstract void LandOn(Player player);
 }

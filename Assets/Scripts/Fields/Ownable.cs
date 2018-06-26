@@ -8,7 +8,7 @@ public abstract class Ownable : Field
 
 	protected Player Owner;
 
-	public void setOwner(Player player)
+	public void SetOwner(Player player)
 	{
 		Owner = player;
 	}
@@ -44,7 +44,7 @@ public abstract class Ownable : Field
 		if (this.Owner == null)
 		{
 			UIManager uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
-			uiManager.OfferBuyProperty();
+			StartCoroutine(uiManager.OfferBuyProperty());
 		}
 		else
 		{
@@ -53,7 +53,7 @@ public abstract class Ownable : Field
 			else
 			{
 				if (!this.IsMortgage)
-					player.AccountBalance -= Rent();
+					player.BalanceManager.TransferMoneyToPlayer(Owner, Rent()); //todo улучшить лог
 			}
 		}
 	}

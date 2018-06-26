@@ -34,6 +34,7 @@ public class AuctionManager : MonoBehaviour
 
     public IEnumerator StartAuction(Ownable property, Player abandonedPlayer)
     {
+        this.gameObject.SetActive(true);
         _property = property;
         _maxBid = property.PurchasePrice;
         MaxBid.text = string.Format("Текущая стоимость: {0}Р", _maxBid);
@@ -77,23 +78,24 @@ public class AuctionManager : MonoBehaviour
     }
 
     public IEnumerator StartBidding()
-    {
-        while (_activePlayers.Count > 1)
-        {
-            foreach (var player in _activePlayers)
+    {    
+            do
             {
-                _currentPlayer = player;
-                ChangeOffer();
-                Input.text = "";
-                yield return new WaitUntil(()=>_isPressed==true);
-                _isPressed = false;
-            }
-            RemovePlayers();
-        }
+                foreach (var player in _activePlayers)
+                {
+                    _currentPlayer = player;
+                    ChangeOffer();
+                    Input.text = Convert.ToString(_maxBid);
+                    yield return new WaitUntil(()=>_isPressed==true);
+                    _isPressed = false;
+                }
+                RemovePlayers();
+            } while (_activePlayers.Count > 1);
 
         Debug.Log(_activePlayers.Count > 0
             ? string.Format("Победитель аукциона - {0}", _activePlayers[0].PlayerName)
             : "Все игроки отказались от покупки");
+        this.gameObject.SetActive(false);
     }
     
 }
