@@ -95,6 +95,10 @@ public class AuctionManager : MonoBehaviour
         Debug.Log(_activePlayers.Count > 0
             ? string.Format("Победитель аукциона - {0}", _activePlayers[0].PlayerName)
             : "Все игроки отказались от покупки");
+        if (_activePlayers.Count>0)
+        {
+            _gameManager.GivePropertyToPlayer(_activePlayers[0], _property);
+        }
         this.gameObject.SetActive(false);
     }
     

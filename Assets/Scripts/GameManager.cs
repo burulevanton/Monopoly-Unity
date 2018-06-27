@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
 	public Player[] Players;
 	public Player CurrentPlayer;
 	public Field[] Board;
-	public GameObject[] Corners; //TODO круговой маршрут
 	public Queue<int> ChanceCards;
 	public Queue<int> PublicTreasuryCards;
 	public DiceRoller DiceRoller;
@@ -120,6 +119,10 @@ public class GameManager : MonoBehaviour
 						_players.Enqueue(CurrentPlayer);
 						CurrentPlayer = _players.Dequeue();
 						CurrentPlayer.CurrentState = Player.State.StartTurn;
+						break;
+					case Player.State.Idle:
+						if (DiceRoller.IsDouble())
+							CurrentPlayer.CurrentState = Player.State.StartTurn;
 						break;
 				}
 				if (CurrentPlayer.InJail && CurrentPlayer.CurrentState == Player.State.StartTurn)

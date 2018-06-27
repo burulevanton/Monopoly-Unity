@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
+using UnityScript.Lang;
+using Array = System.Array;
 
 public class Player : MonoBehaviour
 {
 	public string PlayerName { get; set; }
 
-	private int _accountBalance = 1500;
+//	private int _accountBalance = 1500;
 
 //	public int AccountBalance
 //	{
@@ -37,6 +40,7 @@ public class Player : MonoBehaviour
 	
 	public bool InJail { get; set; }
 
+
 	public void Start()
 	{
 		Owned = new List<Ownable>();
@@ -64,18 +68,35 @@ public class Player : MonoBehaviour
 
 	public State CurrentState { get; set; }
 
-	public IEnumerator MoveTo(Field location)
+	public IEnumerator MoveTo(Field location, bool canGiveMoney=true)
 	{
+		//todo добавить анимацию мб
 		CurrentState = State.Moving;
-		Vector3 startPosition = CurrentLocation.transform.position;
-		Vector3 endPosition = location.transform.position;
-		float pathLength = Vector2.Distance(startPosition, endPosition);
-		float totalTimeForPath = pathLength / 100f;
-		float lastSwitchTime = Time.time;
-		while (transform.position != location.transform.position)
+		var startLocation = CurrentLocation;
+		while (startLocation != location)
 		{
-			float currentTimeOnPath = Time.time - lastSwitchTime;
-			transform.position = Vector2.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
+			Vector3 startPosition = startLocation.transform.position;
+			Vector3 endPosition = startLocation.NextField.transform.position;
+			Vector3 newDirection = (endPosition - startPosition);
+			float x = newDirection.x;
+			float y = newDirection.y;
+			float rotationAngle = Mathf.Atan2 (y, x) * 180 / Mathf.PI;
+			transform.rotation = Quaternion.AngleAxis(rotationAngle, Vector3.forward);
+			float pathLength = Vector2.Distance(startPosition, endPosition);
+			float totalTimeForPath = pathLength / 10f;
+			float lastSwitchTime = Time.time;
+			while (transform.position != startLocation.NextField.transform.position)
+			{
+				float currentTimeOnPath = Time.time - lastSwitchTime;
+				transform.position = Vector2.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
+				yield return null;
+			}
+
+			if (startLocation.NextField.GetType() == typeof(Go) && canGiveMoney)
+			{
+				BalanceManager.GiveMoneyToPlayer(200);
+			}
+			startLocation = startLocation.NextField;
 			yield return null;
 		}
 		this.CurrentLocation = location;

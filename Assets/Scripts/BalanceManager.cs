@@ -17,7 +17,7 @@ public class BalanceManager : MonoBehaviour {
 	public void GiveMoneyToPlayer(int money)
 	{
 		Balance += money;
-		Debug.Log(string.Format("Игрок {0} получает {1}Р"));
+		Debug.Log(string.Format("Игрок {0} получает {1}Р",_player.PlayerName, money));
 	}
 
 	public bool GetMoneyFromPlayer(int money)

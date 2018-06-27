@@ -16,7 +16,7 @@ public class JailManager : MonoBehaviour
 	public void PutPLayerInJail()
 	{
 		_gameManager.CurrentPlayer.InJail = true;
-		StartCoroutine(_gameManager.CurrentPlayer.MoveTo(_gameManager.Board[10]));
+		StartCoroutine(_gameManager.CurrentPlayer.MoveTo(_gameManager.Board[10], false));
 	}
 
 	public void BuyOutOfJail()
