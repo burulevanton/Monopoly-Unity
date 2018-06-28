@@ -14,7 +14,10 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private Button _sellButton;
 	private Button _rollDice;
 	public BuyHouse BuyHouse;
+	public SellHouse SellHouse;
 	public JailUI JailUi;
+	public MortgageProperty MortgagePropertyController;
+	public RedeemProperty RedeemPropertyController;
 
 	// Use this for initialization
 	void Start ()
@@ -43,74 +46,33 @@ public class UIManager : MonoBehaviour
 //		b.gameObject.SetActive(true);
 //	}
 
-	public IEnumerator OfferBuyProperty()
+	public void OfferBuyProperty()
 	{
 		_buyPropertyQuestion.gameObject.SetActive(true);
 		_gameManager.CurrentPlayer.CurrentState = Player.State.OfferToBuyProperty;
-		yield return StartCoroutine(_buyPropertyQuestion.WaitForPressed());
-		_gameManager.CurrentPlayer.CurrentState = Player.State.Idle;
+		_buyPropertyQuestion.CreateForm();
 	}
-	public void BuyProperty()
+	public void MortgageProperty()
 	{
-		_gameManager.BuyProperty((Ownable)_gameManager.CurrentPlayer.CurrentLocation);
+		MortgagePropertyController.gameObject.SetActive(true);
+		MortgagePropertyController.ShowChooseForm(_gameManager.CurrentPlayer);
 	}
-
-	public void MortgagePropety()
+	public void RedeemProperty()
 	{
-		_itemList.Clear();
-		_itemList.SetAction(MortgageCurrentProperty,true);
-		foreach (var property in _gameManager.CurrentPlayer.Owned)
-		{
-			_itemList.AddToList(property, true);	
-		}
-	}
-
-	public void MortgageCurrentProperty(Ownable property)
-	{
-		_gameManager.MortgageProperty(property);
-	}
-	public void RedeemPropety()
-	{
-		_itemList.Clear();
-		_itemList.SetAction(RedeemCurrentProperty,true);
-		foreach (var property in _gameManager.CurrentPlayer.Mortgaged)
-		{
-			_itemList.AddToList(property, true);	
-		}
-	}
-
-	public void RedeemCurrentProperty(Ownable property)
-	{
-		_gameManager.RedeemProperty(property);
+		RedeemPropertyController.gameObject.SetActive(true);
+		RedeemPropertyController.ShowChooseForm(_gameManager.CurrentPlayer);
 	}
 
 	public void OfferBuyHouse()
 	{
-		var property = (Street) _gameManager.CurrentPlayer.Owned[0];
-		BuyHouse.setAction(BuyHouses);
-		StartCoroutine(BuyHouse.ChoosePropertyToUpgrade());
+		BuyHouse.gameObject.SetActive(true);
+		BuyHouse.ChoosePropertyToUpgrade();
 		//StartCoroutine(BuyHouse.CreateForm(property.MaxHouseCanBeBuild()));
-	}
-
-	public void BuyHouses(Street property, int numOfHouses)
-	{
-		_gameManager.BuyHouses(property, numOfHouses);
 	}
 	public void OfferSellHouse()
 	{
-		var property = (Street) _gameManager.CurrentPlayer.Owned[0]; //TODO нормальный выбор
-		BuyHouse.setAction(SellHouses);
-		StartCoroutine(BuyHouse.ChoosePropertyToSellHouse());
-	}
-
-	public void SellHouses(Street property, int numOfHouses)
-	{
-		_gameManager.SellHouses(property, numOfHouses);
-	}
-
-	public void StartAuction()
-	{
-		StartCoroutine(_gameManager.StartAuction());
+		SellHouse.gameObject.SetActive(true); //TODO нормальный выбор
+		SellHouse.ChoosePropertyToSellHouse();
 	}
 	public void EndTurn()
 	{

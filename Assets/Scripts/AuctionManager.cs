@@ -14,9 +14,11 @@ public class AuctionManager : MonoBehaviour
     private GameManager _gameManager;
     private Player _currentPlayer;
     private bool _isPressed;
+    private bool _isValid;
 
     public Text Offer;
     public Text MaxBid;
+    public Text Error;
     public InputField Input;
     public Button Accept;
     public Button Exit;
@@ -30,6 +32,13 @@ public class AuctionManager : MonoBehaviour
         _activePlayers = new List<Player>();
         _removedPlayers = new List<Player>();
         _isPressed = false;
+        _isValid = true;
+    }
+
+    void Update()
+    {
+        Accept.interactable = _isValid;
+        Error.gameObject.SetActive(!_isValid);
     }
 
     public IEnumerator StartAuction(Ownable property, Player abandonedPlayer)
@@ -64,6 +73,11 @@ public class AuctionManager : MonoBehaviour
         _isPressed = true;
     }
 
+    public void CheckValid()
+    {
+        var bid = Convert.ToInt32(Input.text);
+        _isValid = bid < _currentPlayer.BalanceManager.Balance;
+    }
     private void RemovePlayers()
     {
         foreach (var player in _removedPlayers)
@@ -98,6 +112,7 @@ public class AuctionManager : MonoBehaviour
         if (_activePlayers.Count>0)
         {
             _gameManager.GivePropertyToPlayer(_activePlayers[0], _property);
+            _activePlayers[0].BalanceManager.GetMoneyFromPlayer(_maxBid);
         }
         this.gameObject.SetActive(false);
     }

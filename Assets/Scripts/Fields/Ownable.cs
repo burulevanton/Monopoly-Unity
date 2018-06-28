@@ -44,7 +44,7 @@ public abstract class Ownable : Field
 		if (this.Owner == null)
 		{
 			UIManager uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
-			StartCoroutine(uiManager.OfferBuyProperty());
+			uiManager.OfferBuyProperty();
 		}
 		else
 		{

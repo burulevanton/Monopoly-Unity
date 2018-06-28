@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 	public JailManager JailManager;
 	public AuctionManager AuctionManager;
 	public TradeManager TradeManager;
+	public TextLog TextLog;
 	private bool _gameInProgress;
 	private Queue<Player> _players;
 
@@ -71,14 +72,13 @@ public class GameManager : MonoBehaviour
 
 //		if (!_state.Equals(States.Trade))
 //		{
-			
-//			GivePropertyToPlayer(Players[1],Board[12] as Ownable);
-//			GivePropertyToPlayer(Players[1],Board[13] as Ownable);
-//			GivePropertyToPlayer(Players[1],Board[14] as Ownable);
-//			GivePropertyToPlayer(Players[1],Board[15] as Ownable);
-//			GivePropertyToPlayer(Players[1],Board[16] as Ownable);
-//			GivePropertyToPlayer(Players[1],Board[18] as Ownable);
-//			GivePropertyToPlayer(Players[1],Board[19] as Ownable);
+//			GivePropertyToPlayer(CurrentPlayer,Board[12] as Ownable);
+//			GivePropertyToPlayer(CurrentPlayer,Board[13] as Ownable);
+//			GivePropertyToPlayer(CurrentPlayer,Board[14] as Ownable);
+//			GivePropertyToPlayer(CurrentPlayer,Board[15] as Ownable);
+//			GivePropertyToPlayer(CurrentPlayer,Board[16] as Ownable);
+//			GivePropertyToPlayer(CurrentPlayer,Board[18] as Ownable);
+//			GivePropertyToPlayer(CurrentPlayer,Board[19] as Ownable);
 //			_state = States.Trade;
 //			TradeManager.StartTrade(Players[0], Players[1]);
 //		}
@@ -86,11 +86,42 @@ public class GameManager : MonoBehaviour
 
 	private IEnumerator Game()
 	{
+		//todo отправка в тюрьму после больше 3 раз дублей
 //		yield return StartCoroutine(current_player.MoveTo(Board[1]));
 //		yield return new WaitForSeconds(2);
 //		yield return StartCoroutine(current_player.MoveTo(Board[3]));
 //		yield return new WaitForSeconds(2);
 		//yield return StartCoroutine(BankruptByGame(Players[0]));
+//		GivePropertyToPlayer(CurrentPlayer,Board[12] as Ownable);
+//		GivePropertyToPlayer(CurrentPlayer,Board[13] as Ownable);
+//		GivePropertyToPlayer(CurrentPlayer,Board[14] as Ownable);
+//		GivePropertyToPlayer(CurrentPlayer,Board[15] as Ownable);
+//		GivePropertyToPlayer(CurrentPlayer,Board[16] as Ownable);
+//		GivePropertyToPlayer(CurrentPlayer,Board[18] as Ownable);
+//		GivePropertyToPlayer(CurrentPlayer,Board[19] as Ownable);
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
+		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
 		while (_gameInProgress)
 		{
 			if (_state == States.Default)

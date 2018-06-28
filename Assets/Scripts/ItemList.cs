@@ -21,7 +21,6 @@ public class ItemList : MonoBehaviour {
     void Awake()
     {
         buttons = new List<RectTransform>();
-
     }
 
     public void SetAction(Action<Ownable> action, bool needUpdateAfterClick)

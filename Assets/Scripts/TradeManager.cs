@@ -56,9 +56,25 @@ public class TradeManager : MonoBehaviour
 
 	public Text UGetMoney;
 	public Text ULoseMoney;
+
+	public Text ErrorPlayer1;
+	public Text ErrorPlayer2;
+
+	private bool _isOfferValidForPlayer1;
+	private bool _isOfferValidForPlayer2;
+
+	void Update()
+	{
+		ErrorPlayer1.gameObject.SetActive(!_isOfferValidForPlayer1);
+		ErrorPlayer2.gameObject.SetActive(!_isOfferValidForPlayer2);
+		if (CreateOffer.IsActive())
+			CreateOffer.interactable = _isOfferValidForPlayer1 && _isOfferValidForPlayer2;
+	}
 	
 	void Awake()
 	{
+		_isOfferValidForPlayer1 = true;
+		_isOfferValidForPlayer2 = true;
 		_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 		_player1OfferProperties = new List<Ownable>();
 		_player2OfferProperties = new List<Ownable>();
@@ -68,7 +84,7 @@ public class TradeManager : MonoBehaviour
 		DeclineOffer.onClick.AddListener(DeclineTradeOffer);
 		CounterOffer.onClick.AddListener(CounterOfferTradeOffer);
 	}
-
+	
 	private void AddToPlayer1Offer(Ownable property)
 	{
 		_player1OfferProperties.Add(property);
@@ -158,6 +174,7 @@ public class TradeManager : MonoBehaviour
 	{
 		_player1 = player1;
 		_player2 = player2;
+		this.gameObject.SetActive(true);
 		InitComponentsCreateTrade();
 		foreach (var property in player1.Owned)
 		{
@@ -261,5 +278,16 @@ public class TradeManager : MonoBehaviour
 		{
 			_itemListPlayer2PropertiesOffer.AddToList(property, true);
 		}
+	}
+
+	public void CheckValidForPlayer1()
+	{
+		var player1OfferMoney = Convert.ToInt32(Player1OfferMoney.text);
+		_isOfferValidForPlayer1 = player1OfferMoney < _player1.BalanceManager.Balance;
+	}
+	public void CheckValidForPlayer2()
+	{
+		var player2OfferMoney = Convert.ToInt32(Player2OfferMoney.text);
+		_isOfferValidForPlayer2 = player2OfferMoney < _player2.BalanceManager.Balance;
 	}
 }
