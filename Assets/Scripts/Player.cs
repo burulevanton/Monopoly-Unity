@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 using UnityScript.Lang;
 using Array = System.Array;
 
@@ -11,6 +12,7 @@ public class Player : MonoBehaviour
 	public Color Color;
 	public float YOffset;
 	public float XOffset;
+	private SpriteRenderer _spriteRenderer;
 
 //	private int _accountBalance = 1500;
 
@@ -52,6 +54,15 @@ public class Player : MonoBehaviour
 		CurrentState = State.StartTurn;
 		PlayerName = string.Format("{0}",Random.Range(1, 100));
 		BalanceManager = gameObject.AddComponent<BalanceManager>();
+		_spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+	}
+
+	private void Update()
+	{
+		if (CurrentState == State.Bankrupt)
+		{
+			_spriteRenderer.sprite = null;
+		}
 	}
 
 	public enum State
@@ -103,7 +114,7 @@ public class Player : MonoBehaviour
 			yield return null;
 		}
 		this.CurrentLocation = location;
-		location.LandOn(this);
 		CurrentState = State.Idle;
+		location.LandOn(this);
 	}
 }

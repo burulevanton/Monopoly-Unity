@@ -59,7 +59,8 @@ public class UIManager : MonoBehaviour
 		StartTurnNotification.SetActive(true);
 		Text text = StartTurnNotification.GetComponentInChildren<Text>();
 		text.text = string.Format("Ход игрока {0}", _gameManager.CurrentPlayer.PlayerName);
-		yield return new WaitForSeconds(0.8f);
+		yield return StartCoroutine(PlayerInfoManager.StartTurn());
+		//yield return new WaitForSeconds(0.8f);
 		StartTurnNotification.SetActive(false);
 	}
 

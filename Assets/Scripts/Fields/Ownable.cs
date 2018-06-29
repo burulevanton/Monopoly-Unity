@@ -58,7 +58,7 @@ public abstract class Ownable : Field
 
 	public override void LandOn(Player player)
 	{
-		_textLog.LogText(string.Format("Вы попали на поле {0}",this.Name));
+		_textLog.LogText(string.Format("{0} попал на поле {1}",player.PlayerName, this.Name));
 		if (this.Owner == null)
 		{
 			UIManager uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
@@ -67,7 +67,7 @@ public abstract class Ownable : Field
 		else
 		{
 			if(this.Owner == player)
-				_textLog.LogText("Вы уже купили данное поле" + string.Format("текущая аренда {0}",Rent()));
+				_textLog.LogText(string.Format("{0} попал на своё поле",player.PlayerName, this.Name));
 			else
 			{
 				if (!this.IsMortgage)
@@ -92,7 +92,10 @@ public abstract class Ownable : Field
 
 	public void MouseEnter()
 	{
-		if (ImageBoardInfo.isActiveAndEnabled && ImageBoardInfo.Property == this || !GameManager.GameInProgress) return;
+		if (ImageBoardInfo.isActiveAndEnabled && ImageBoardInfo.Property == this || !GameManager.GameInProgress ||
+		    (GameManager.CurrentPlayer.CurrentState != Player.State.Idle &&
+		     GameManager.CurrentPlayer.CurrentState != Player.State.StartTurn) ||
+			GameManager.State == GameManager.States.Auction || GameManager.State == GameManager.States.Trade) return;
 		ImageBoardInfo.transform.position = Input.mousePosition + new Vector3(XOffset, YOffset, 0);
 		ImageBoardInfo.SetProperty(this);
 		ImageBoardInfo.gameObject.SetActive(true);

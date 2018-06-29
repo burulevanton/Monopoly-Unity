@@ -38,7 +38,13 @@ public class SellHouse : MonoBehaviour
 		Slider.value = 0;
 		_gameManager.CurrentPlayer.CurrentState = Player.State.Idle;
 	}
-
+	public void Exit()
+	{
+		_choosenProperty = null;
+		gameObject.SetActive(false);
+		ChooseAmount.SetActive(false);
+		_gameManager.CurrentPlayer.CurrentState = Player.State.Idle;
+	}
 	private void SetProperty(Ownable property)
 	{
 		_choosenProperty = (Street) property;

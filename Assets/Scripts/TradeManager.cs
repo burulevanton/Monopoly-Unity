@@ -38,7 +38,7 @@ public class TradeManager : MonoBehaviour
 	private Player _player1;
 	private Player _player2;
 
-	private GameManager _gameManager;
+	[SerializeField]private GameManager _gameManager;
 	public RectTransform Button;
 
 	public Button CreateOffer;
@@ -70,12 +70,17 @@ public class TradeManager : MonoBehaviour
 		if (CreateOffer.IsActive())
 			CreateOffer.interactable = _isOfferValidForPlayer1 && _isOfferValidForPlayer2;
 	}
-	
+
+	private void Start()
+	{
+		_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+	}
+
 	void Awake()
 	{
 		_isOfferValidForPlayer1 = true;
 		_isOfferValidForPlayer2 = true;
-		_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+		
 		_player1OfferProperties = new List<Ownable>();
 		_player2OfferProperties = new List<Ownable>();
 		DeclineTrade.onClick.AddListener(CancelTrade);
@@ -174,6 +179,7 @@ public class TradeManager : MonoBehaviour
 	{
 		_player1 = player1;
 		_player2 = player2;
+		_gameManager.State = GameManager.States.Trade;
 		this.gameObject.SetActive(true);
 		InitComponentsCreateTrade();
 		foreach (var property in player1.Owned)
@@ -192,6 +198,7 @@ public class TradeManager : MonoBehaviour
 		_player1OfferProperties.Clear();
 		_player2OfferProperties.Clear();
 		DestroyComponentsCreateTrade();
+		_gameManager.State = GameManager.States.Default;
 		this.gameObject.SetActive(false);
 	}
 
@@ -228,6 +235,7 @@ public class TradeManager : MonoBehaviour
 
 		_player1.BalanceManager.TransferMoneyToPlayer(_player2, _player1OfferMoney);
 		_player2.BalanceManager.TransferMoneyToPlayer(_player1, _player2OfferMoney);
+		_gameManager.State = GameManager.States.Default;
 	}
 
 	private void DeclineTradeOffer()
@@ -236,6 +244,7 @@ public class TradeManager : MonoBehaviour
 		_player1OfferProperties.Clear();
 		_player2OfferProperties.Clear();
 		DestroyComponentsTradeOffer();
+		_gameManager.State = GameManager.States.Default;
 	}
 
 	private void CounterOfferTradeOffer()

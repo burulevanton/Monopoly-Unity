@@ -13,10 +13,12 @@ public class PlayerInfo : MonoBehaviour
     private GameManager _gameManager;
     public Image Jail;
     public Text Bankrupt;
+    public Vector3 Location;
 
     private void Awake()
     {
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        Location = transform.position;
     }
 
     private void Update()

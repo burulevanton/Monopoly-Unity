@@ -21,7 +21,7 @@ public class BalanceManager : MonoBehaviour {
 	public void GiveMoneyToPlayer(int money)
 	{
 		Balance += money;
-		_textLog.LogText(string.Format("Игрок {0} получает {1}Р",_player.PlayerName, money));
+		_textLog.LogText(string.Format("Игрок {0} получает {1}£",_player.PlayerName, money));
 	}
 
 	private bool CheckBalance(int money)
@@ -32,13 +32,13 @@ public class BalanceManager : MonoBehaviour {
 	{
 		if (CheckBalance(money))
 		{
-			_textLog.LogText(string.Format("{0} платит {1}",_player.PlayerName, money));
+			_textLog.LogText(string.Format("{0} платит {1}£",_player.PlayerName, money));
 			Balance -= money;
 			return true;
 		}
 		else
 		{
-			_textLog.LogText(string.Format("{0} не в состоянии выплатить {1}Р",_player.PlayerName, money));
+			_textLog.LogText(string.Format("{0} не в состоянии выплатить {1}£",_player.PlayerName, money));
 			_player.CurrentState = Player.State.Bankrupt;
 			StartCoroutine(_gameManager.BankruptByGame(_player));
 			return false;
@@ -49,14 +49,14 @@ public class BalanceManager : MonoBehaviour {
 	{
 		if (CheckBalance(money))
 		{
-			_textLog.LogText(string.Format("Игрок {0} платит игроку {1} {2}Р", _player.PlayerName, toPlayer.PlayerName, money));
+			_textLog.LogText(string.Format("Игрок {0} должен выплатить игроку {1} {2}£", _player.PlayerName, toPlayer.PlayerName, money));
 			GetMoneyFromPlayer(money);
 			toPlayer.BalanceManager.GiveMoneyToPlayer(money);
 			return true;
 		}
 		else
 		{
-			_textLog.LogText(string.Format("{0} не в состоянии выплатить {1}Р",_player.PlayerName, money));
+			_textLog.LogText(string.Format("{0} не в состоянии выплатить {1}£",_player.PlayerName, money));
 			_player.CurrentState = Player.State.Bankrupt;
 			_gameManager.BankruptByPlayer(_player, toPlayer);
 			return false;

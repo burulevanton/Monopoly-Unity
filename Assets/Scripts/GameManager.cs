@@ -113,9 +113,16 @@ public class GameManager : MonoBehaviour
 //		GivePropertyToPlayer(CurrentPlayer,Board[18] as Ownable);
 //		GivePropertyToPlayer(CurrentPlayer,Board[19] as Ownable);
 		//CurrentPlayer.BalanceManager.GetMoneyFromPlayer(1500);
-		GivePropertyToPlayer(CurrentPlayer, Board[1] as Ownable);
-		GivePropertyToPlayer(CurrentPlayer, Board[3] as Ownable);
-		GivePropertyToPlayer(CurrentPlayer, Board[6] as Ownable);
+//		ActivePlayers[1].BalanceManager.GetMoneyFromPlayer(1500);
+//		ActivePlayers[2].BalanceManager.GetMoneyFromPlayer(1500);
+//		GivePropertyToPlayer(CurrentPlayer, Board[1] as Ownable);
+//		GivePropertyToPlayer(CurrentPlayer, Board[3] as Ownable);
+//		GivePropertyToPlayer(CurrentPlayer, Board[6] as Ownable);
+//		GivePropertyToPlayer(CurrentPlayer, Board[5] as Ownable);
+//		GivePropertyToPlayer(CurrentPlayer, Board[8] as Ownable);
+//		GivePropertyToPlayer(CurrentPlayer, Board[9] as Ownable);
+//		GivePropertyToPlayer(CurrentPlayer, Board[11] as Ownable);
+//		GivePropertyToPlayer(CurrentPlayer, Board[12] as Ownable);
 		yield return StartCoroutine(_uIManager.PlayerInfoManager.SetPlayerInfo());
 		yield return StartCoroutine(_uIManager.StartTurn());
 		while (GameInProgress)
@@ -145,6 +152,7 @@ public class GameManager : MonoBehaviour
 //							yield return new WaitUntil(() => CurrentPlayer.CurrentState!=Player.State.OfferToSellHouse);
 //							break;
 						case Player.State.EndTurn:
+							yield return StartCoroutine(_uIManager.PlayerInfoManager.EndTurn());
 							_players.Enqueue(CurrentPlayer);
 							CurrentPlayer = _players.Dequeue();
 							CurrentPlayer.CurrentState = Player.State.StartTurn;
@@ -166,6 +174,7 @@ public class GameManager : MonoBehaviour
 
 							break;
 						case Player.State.Bankrupt:
+							yield return StartCoroutine(_uIManager.PlayerInfoManager.EndTurn());
 							CurrentPlayer = _players.Dequeue();
 							CurrentPlayer.CurrentState = Player.State.StartTurn;
 							if (_players.Count==0)
@@ -202,13 +211,14 @@ public class GameManager : MonoBehaviour
 	public IEnumerator RollDice()
 	{
 		DiceRoller.RollDice();
-		TextLog.LogText(string.Format("{0} выбросил {1} и {2}",CurrentPlayer, DiceRoller.Dice1, DiceRoller.Dice2));
+		TextLog.LogText(string.Format("{0} выбросил {1} и {2}",CurrentPlayer.PlayerName, DiceRoller.Dice1, DiceRoller.Dice2));
 		yield return StartCoroutine(CurrentPlayer.MoveTo(Board[NextLocation()]));
 	}
 	
 	public void BuyProperty(Ownable property)
 	{
 		if (!CurrentPlayer.BalanceManager.GetMoneyFromPlayer(property.PurchasePrice)) return;
+		TextLog.LogText(string.Format("{0} покупает {1}",CurrentPlayer.PlayerName, property.name));
 		CurrentPlayer.Owned.Add(property);
 		property.SetOwner(CurrentPlayer);
 	}
@@ -219,13 +229,15 @@ public class GameManager : MonoBehaviour
 		CurrentPlayer.Owned.Remove(property);
 		CurrentPlayer.Mortgaged.Add(property);
 		property.Mortgage();
+		TextLog.LogText(string.Format("{0} закладывает {1}",CurrentPlayer.PlayerName, property.name));
 	}
 	public void RedeemProperty(Ownable property)
 	{
-		CurrentPlayer.BalanceManager.GetMoneyFromPlayer((int)(property.PurchasePrice / 2 * 1.1f));
+		if(!CurrentPlayer.BalanceManager.GetMoneyFromPlayer((int)(property.PurchasePrice / 2 * 1.1f))) return;
 		CurrentPlayer.Owned.Add(property);
 		CurrentPlayer.Mortgaged.Remove(property);
 		property.UnMortgage();
+		TextLog.LogText(string.Format("{0} выкупает {1}",CurrentPlayer.PlayerName, property.name));
 	}
 
 	public bool CanPlayerUpgradeAnything()
@@ -238,8 +250,9 @@ public class GameManager : MonoBehaviour
 
 	public void BuyHouses(Street property, int numOfHouses)
 	{
-		CurrentPlayer.BalanceManager.GetMoneyFromPlayer(property.HousePrice * numOfHouses);
+		if (!CurrentPlayer.BalanceManager.GetMoneyFromPlayer(property.HousePrice * numOfHouses)) return;
 		property.BuildHouses(numOfHouses);
+		TextLog.LogText(string.Format("{0} покупает {1} дом(а) на {2}",CurrentPlayer.PlayerName,numOfHouses, property.name));
 	}
 
 	public bool CanPlayerSellAnything()
@@ -253,11 +266,13 @@ public class GameManager : MonoBehaviour
 	{
 		CurrentPlayer.BalanceManager.GiveMoneyToPlayer((int) (property.HousePrice * numOfHouses / 2));
 		property.SellHouse(numOfHouses);
+		TextLog.LogText(string.Format("{0} продаёт {1} дом(а) на {2}",CurrentPlayer.PlayerName,numOfHouses, property.name));
 	}
 
 	public void StartAuction()
 	{
 		State = States.Auction;
+		TextLog.LogText(string.Format("{0} отказался от покупки, начинается аукцион",CurrentPlayer.PlayerName));
 		StartCoroutine(AuctionManager.StartAuction((Ownable)CurrentPlayer.CurrentLocation, CurrentPlayer));
 	}
 	public void GivePropertyToPlayer(Player player, Ownable property)
@@ -270,7 +285,7 @@ public class GameManager : MonoBehaviour
 		from.Owned.Remove(property);
 		to.Owned.Add(property);
 		property.SetOwner(to);
-		TextLog.LogText(string.Format("{0} передаётся от игрока {1} к игроку {2}",property.name, from.name, to.name));
+		TextLog.LogText(string.Format("{0} передаётся от игрока {1} к игроку {2}",property.name, from.PlayerName, to.PlayerName));
 	}
 
 	public void TransfermortgagedPropertyBetweenPlayers(Player from, Player to, Ownable property)
@@ -278,7 +293,7 @@ public class GameManager : MonoBehaviour
 		from.Mortgaged.Remove(property);
 		to.Mortgaged.Add(property);
 		property.SetOwner(to);
-		TextLog.LogText(string.Format("{0} передаётся от игрока {1} к игроку {2}",property.name, from.name, to.name));
+		TextLog.LogText(string.Format("{0} передаётся от игрока {1} к игроку {2}",property.name, from.PlayerName, to.PlayerName));
 	}
 	public void BankruptByPlayer(Player bankruptPlayer, Player winPlayer)
 	{
@@ -305,6 +320,7 @@ public class GameManager : MonoBehaviour
 		}
 
 		winPlayer.BalanceManager.GetMoneyFromPlayer(amount);
+		TextLog.LogText(string.Format("{0} обанкротил игрока {1}", winPlayer.PlayerName, bankruptPlayer.PlayerName));
 		//todo добавить удаление игрока
 	}
 
@@ -327,5 +343,6 @@ public class GameManager : MonoBehaviour
 			yield return AuctionManager.StartAuction(property, bankruptPlayer);
 			State = States.Default;
 		}
+		TextLog.LogText(string.Format("Банк обанкротил игрока {0}", bankruptPlayer.PlayerName));
 	}
 }

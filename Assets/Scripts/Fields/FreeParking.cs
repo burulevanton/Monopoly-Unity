@@ -14,6 +14,6 @@ public class FreeParking : Field
 
 	public override void LandOn(Player player)
 	{
-		_textLog.LogText(string.Format("Вы попали на поле {0}",this.Name));
+		_textLog.LogText(string.Format("{0} попал на поле {1}",player.PlayerName, this.Name));
 	}
 }

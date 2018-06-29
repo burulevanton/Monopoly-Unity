@@ -49,6 +49,13 @@ public class BuyHouse : MonoBehaviour
 		_gameManager.CurrentPlayer.CurrentState = Player.State.Idle;
 	}
 
+	public void Exit()
+	{
+		_choosenProperty = null;
+		gameObject.SetActive(false);
+		ChooseAmount.SetActive(false);
+		_gameManager.CurrentPlayer.CurrentState = Player.State.Idle;
+	}
 	private void SetProperty(Ownable property)
 	{
 		_choosenProperty = (Street) property;
@@ -72,25 +79,6 @@ public class BuyHouse : MonoBehaviour
 		}
 	}
 
-//	public void ChoosePropertyToSellHouse()
-//	{
-//		_gameManager.CurrentPlayer.CurrentState = Player.State.OfferToSellHouse;
-//		this.gameObject.SetActive(true);
-//		ChooseProperty.gameObject.SetActive(true);
-//		_itemList.scroll = Scroll;
-//		_itemList.Clear();
-//		_itemList.SetAction(SetProperty, false);
-//		var sellProperties = _gameManager.CurrentPlayer.Owned.FindAll(x => x.GetType() == typeof(Street))
-//			.Select(x => (Street) x).ToList()
-//			.FindAll(x => x.CurrentUpgradeLevel > 0);
-//		foreach (var property in sellProperties)
-//		{
-//			_itemList.AddToList(property, true);
-//		}
-//		ChooseProperty.gameObject.SetActive(false);
-//		if (_choosenProperty != null)
-//			yield return CreateForm(_choosenProperty.CurrentUpgradeLevel);
-//	}
 	private void CreateForm(int maxValue)
 	{
 		ChooseAmount.gameObject.SetActive(true);

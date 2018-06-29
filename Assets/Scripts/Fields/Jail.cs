@@ -14,6 +14,6 @@ public class Jail : Field {
     public override void LandOn(Player player)
     {
         if(player.CurrentState != Player.State.InJail)
-            _textLog.LogText(string.Format("Вы попали на поле {0}",this.Name));
+            _textLog.LogText(string.Format("{0} попал на поле {1}",player.PlayerName, this.Name));
     }
 }
