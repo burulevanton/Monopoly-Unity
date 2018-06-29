@@ -47,21 +47,23 @@ public class AuctionManager : MonoBehaviour
         _property = property;
         _maxBid = property.PurchasePrice;
         MaxBid.text = string.Format("Текущая стоимость: {0}Р", _maxBid);
-        foreach (var player in _gameManager.Players)
+        foreach (var player in _gameManager.ActivePlayers)
         {
             if(!player.Equals(abandonedPlayer))
             _activePlayers.Add(player);
         }
         yield return StartCoroutine(StartBidding());
+        this.gameObject.SetActive(false);
+        _gameManager.State = GameManager.States.Default;
     }
 
-    public void RemovePlayer()
+    private void RemovePlayer()
     {
         _removedPlayers.Add(_currentPlayer);
         _isPressed = true;
     }
 
-    public void ChangeBid()
+    private void ChangeBid()
     {
         var bid = Convert.ToInt32(Input.text);
         if (bid > _maxBid)
@@ -86,12 +88,13 @@ public class AuctionManager : MonoBehaviour
         }
         _removedPlayers.Clear();
     }
-    public void ChangeOffer()
+
+    private void ChangeOffer()
     {
         Offer.text = string.Format("Игрок {0} введите вашу ставку за данное поле", _currentPlayer.PlayerName);
     }
 
-    public IEnumerator StartBidding()
+    private IEnumerator StartBidding()
     {    
             do
             {
@@ -106,15 +109,12 @@ public class AuctionManager : MonoBehaviour
                 RemovePlayers();
             } while (_activePlayers.Count > 1);
 
-        Debug.Log(_activePlayers.Count > 0
+        _gameManager.TextLog.LogText(_activePlayers.Count > 0
             ? string.Format("Победитель аукциона - {0}", _activePlayers[0].PlayerName)
             : "Все игроки отказались от покупки");
-        if (_activePlayers.Count>0)
-        {
-            _gameManager.GivePropertyToPlayer(_activePlayers[0], _property);
-            _activePlayers[0].BalanceManager.GetMoneyFromPlayer(_maxBid);
-        }
-        this.gameObject.SetActive(false);
+        if (_activePlayers.Count <= 0) yield break;
+        _gameManager.GivePropertyToPlayer(_activePlayers[0], _property);
+        _activePlayers[0].BalanceManager.GetMoneyFromPlayer(_maxBid);
     }
     
 }

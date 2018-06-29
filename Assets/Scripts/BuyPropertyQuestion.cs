@@ -28,11 +28,14 @@ public class BuyPropertyQuestion : MonoBehaviour
 	{
 		_gameManager.BuyProperty((Ownable)_gameManager.CurrentPlayer.CurrentLocation);
 		gameObject.SetActive(false);
-		_gameManager.CurrentPlayer.CurrentState = Player.State.Idle;
+		if (_gameManager.CurrentPlayer.CurrentState != Player.State.Bankrupt)
+		{
+			_gameManager.CurrentPlayer.CurrentState = Player.State.Idle;
+		}
 	}
 	public void StartAuction()
 	{
-		StartCoroutine(_gameManager.StartAuction());
+		_gameManager.StartAuction();
 		gameObject.SetActive(false);
 		_gameManager.CurrentPlayer.CurrentState = Player.State.Idle;
 	}

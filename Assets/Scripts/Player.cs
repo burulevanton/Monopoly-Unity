@@ -8,6 +8,9 @@ using Array = System.Array;
 public class Player : MonoBehaviour
 {
 	public string PlayerName { get; set; }
+	public Color Color;
+	public float YOffset;
+	public float XOffset;
 
 //	private int _accountBalance = 1500;
 
@@ -40,8 +43,7 @@ public class Player : MonoBehaviour
 	
 	public bool InJail { get; set; }
 
-
-	public void Start()
+	public void Awake()
 	{
 		Owned = new List<Ownable>();
 		Mortgaged = new List<Ownable>();
@@ -63,7 +65,8 @@ public class Player : MonoBehaviour
 		OfferToSellHouse,
 		InJail,
 		EndTurn,
-		Idle
+		Idle,
+		Bankrupt
 	};
 
 	public State CurrentState { get; set; }
@@ -75,8 +78,8 @@ public class Player : MonoBehaviour
 		var startLocation = CurrentLocation;
 		while (startLocation != location)
 		{
-			Vector3 startPosition = startLocation.transform.position;
-			Vector3 endPosition = startLocation.NextField.transform.position;
+			Vector3 startPosition = startLocation.transform.position + new Vector3(XOffset, YOffset,0);
+			Vector3 endPosition = startLocation.NextField.transform.position + new Vector3(XOffset, YOffset, 0);
 			Vector3 newDirection = (endPosition - startPosition);
 			float x = newDirection.x;
 			float y = newDirection.y;
@@ -85,7 +88,7 @@ public class Player : MonoBehaviour
 			float pathLength = Vector2.Distance(startPosition, endPosition);
 			float totalTimeForPath = pathLength / 10f;
 			float lastSwitchTime = Time.time;
-			while (transform.position != startLocation.NextField.transform.position)
+			while (transform.position != startLocation.NextField.transform.position + new Vector3(XOffset, YOffset, 0))
 			{
 				float currentTimeOnPath = Time.time - lastSwitchTime;
 				transform.position = Vector2.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);

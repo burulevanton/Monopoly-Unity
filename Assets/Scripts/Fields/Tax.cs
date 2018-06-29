@@ -6,10 +6,17 @@ public class Tax : Field
 {
 
 	[SerializeField] private int _taxCost;
+	private TextLog _textLog;
+
+	private void Awake()
+	{
+		_textLog = GameObject.Find("TextLog").GetComponent<TextLog>();
+	}
+
 
 	public override void LandOn(Player player)
 	{
-		Debug.Log(string.Format("Вы попали на поле {0}",this.Name));
+		_textLog.LogText(string.Format("Вы попали на поле {0}",this.Name));
 		player.BalanceManager.GetMoneyFromPlayer(_taxCost);
 	}
 }

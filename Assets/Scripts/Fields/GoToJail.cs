@@ -11,7 +11,7 @@ public class GoToJail : Field
     }
     public override void LandOn(Player player)
     {
-        Debug.Log(string.Format("Вы попали на поле {0}",this.Name));
+        _gameManager.TextLog.LogText(string.Format("Вы попали на поле {0}",this.Name));
         _gameManager.JailManager.PutPLayerInJail();
     }
 }

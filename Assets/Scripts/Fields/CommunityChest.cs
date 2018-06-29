@@ -15,7 +15,7 @@ public class CommunityChest : Field {
 	
 	public override void LandOn(Player player)
 	{
-		Debug.Log(string.Format("Вы попали на поле {0}",this.Name));
+		_gameManager.TextLog.LogText(string.Format("Вы попали на поле {0}",this.Name));
 		var numCard = _gameManager.ChanceCards.Dequeue();
 		_gameManager.ChanceCards.Enqueue(numCard);
 		switch (numCard)

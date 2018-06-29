@@ -2,10 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FreeParking : Field {
-	
+public class FreeParking : Field
+{
+
+	private TextLog _textLog;
+
+	private void Awake()
+	{
+		_textLog = GameObject.Find("TextLog").GetComponent<TextLog>();
+	}
+
 	public override void LandOn(Player player)
 	{
-		Debug.Log(string.Format("Вы попали на поле {0}",this.Name));
+		_textLog.LogText(string.Format("Вы попали на поле {0}",this.Name));
 	}
 }

@@ -16,7 +16,7 @@ public class Chance : Field
 	
 	public override void LandOn(Player player)
 	{
-		Debug.Log(string.Format("Вы попали на поле {0}",this.Name));
+		_gameManager.TextLog.LogText(string.Format("Вы попали на поле {0}",this.Name));
 		var numCard = _gameManager.ChanceCards.Dequeue();
 		var indexLocation = Array.IndexOf(_gameManager.Board, player.CurrentLocation);
 		_gameManager.ChanceCards.Enqueue(numCard);

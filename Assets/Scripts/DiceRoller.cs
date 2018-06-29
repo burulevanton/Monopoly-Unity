@@ -3,24 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DiceRoller : MonoBehaviour {
-
-	private int _dice1;
-	private int _dice2;
+	private void Awake()
+	{
+		DoublesInARow = 0;
+	}
 
 	public void RollDice()
 	{
-		_dice1 = Random.Range(1, 7);
-		_dice2 = Random.Range(1, 7);
-		Debug.Log(string.Format("Вы выбросили {0} и {1}",_dice1, _dice2));
+		Dice1 = Random.Range(1, 7);
+		Dice2 = Random.Range(1, 7);
+		if (IsDouble())
+		{
+			DoublesInARow++;
+		}
+		else
+		{
+			DoublesInARow = 0;
+		}
 	}
+
+	public int Dice1 { get; private set; }
+
+	public int Dice2 { get; private set; }
+
+	public int DoublesInARow { get;  set; }
 
 	public int CurrentRoll()
 	{
-		return _dice1 + _dice2;
+		return Dice1 + Dice2;
 	}
 
 	public bool IsDouble()
 	{
-		return _dice1 == _dice2;
+		return Dice1 == Dice2;
 	}
 }

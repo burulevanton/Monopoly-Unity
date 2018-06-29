@@ -22,19 +22,35 @@ public class GameManager : MonoBehaviour
 	public AuctionManager AuctionManager;
 	public TradeManager TradeManager;
 	public TextLog TextLog;
-	private bool _gameInProgress;
+	public bool GameInProgress;
 	private Queue<Player> _players;
+	private UIManager _uIManager;
+	public List<Player> ActivePlayers;
 
-	private enum States
+	public enum States
 	{
 		Default,
 		Auction,
 		Trade
 	};
 
-	private States _state;
+	
+	public States State { get; set; }
 
 	private void Start()
+	{
+		_uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
+		
+	}
+
+	public void SetPlayer(int i, string name)
+	{
+		Players[i].gameObject.SetActive(true);
+		ActivePlayers.Add(Players[i]);
+		Players[i].PlayerName = name;
+	}
+
+	public void InitComponents()
 	{
 		ChanceCards = new Queue<int>();
 		PublicTreasuryCards = new Queue<int>();
@@ -43,20 +59,17 @@ public class GameManager : MonoBehaviour
 			ChanceCards.Enqueue(i);
 			PublicTreasuryCards.Enqueue(i);
 		}
-		_state = States.Default;
-		_gameInProgress = true;
+		State = States.Default;
 		_players = new Queue<Player>();
-		foreach (var player in Players)
+		foreach (var player in ActivePlayers)
 		{
 			player.CurrentLocation = Board[0];
 			_players.Enqueue(player);
 		}
-
 		CurrentPlayer = _players.Dequeue();
+		GameInProgress = true;
 		StartCoroutine(Game());
-		
 	}
-
 	void Update()
 	{
 //		if (!_gameInProgress)
@@ -99,70 +112,83 @@ public class GameManager : MonoBehaviour
 //		GivePropertyToPlayer(CurrentPlayer,Board[16] as Ownable);
 //		GivePropertyToPlayer(CurrentPlayer,Board[18] as Ownable);
 //		GivePropertyToPlayer(CurrentPlayer,Board[19] as Ownable);
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		TextLog.LogText("СОСИ ХУЙ БЛЯТЬ ПИЗДЕЦ");
-		while (_gameInProgress)
+		//CurrentPlayer.BalanceManager.GetMoneyFromPlayer(1500);
+		GivePropertyToPlayer(CurrentPlayer, Board[1] as Ownable);
+		GivePropertyToPlayer(CurrentPlayer, Board[3] as Ownable);
+		GivePropertyToPlayer(CurrentPlayer, Board[6] as Ownable);
+		yield return StartCoroutine(_uIManager.PlayerInfoManager.SetPlayerInfo());
+		yield return StartCoroutine(_uIManager.StartTurn());
+		while (GameInProgress)
 		{
-			if (_state == States.Default)
+			switch (State)
 			{
-				switch (CurrentPlayer.CurrentState)
-				{
-					case Player.State.Moving:
-						yield return new WaitUntil(() => CurrentPlayer.CurrentState!=Player.State.Moving);
-						break;
-					case Player.State.OfferToBuyProperty:
-						yield return new WaitUntil(() => CurrentPlayer.CurrentState!=Player.State.OfferToBuyProperty);
-						break;
-					case Player.State.OfferToBuyHouse:
-						yield return new WaitUntil(() => CurrentPlayer.CurrentState!=Player.State.OfferToBuyHouse);
-						break;
-					case Player.State.OfferToMortgageProperty:
-						yield return new WaitUntil(() => CurrentPlayer.CurrentState!=Player.State.OfferToMortgageProperty);
-						break;
-					case Player.State.OfferToRedeemProperty:
-						yield return new WaitUntil(() => CurrentPlayer.CurrentState!=Player.State.OfferToRedeemProperty);
-						break;
-					case Player.State.OfferToSellHouse:
-						yield return new WaitUntil(() => CurrentPlayer.CurrentState!=Player.State.OfferToSellHouse);
-						break;
-					case Player.State.EndTurn:
-						_players.Enqueue(CurrentPlayer);
-						CurrentPlayer = _players.Dequeue();
-						CurrentPlayer.CurrentState = Player.State.StartTurn;
-						break;
-					case Player.State.Idle:
-						if (DiceRoller.IsDouble())
+				case States.Default:
+					switch (CurrentPlayer.CurrentState)
+					{
+//						case Player.State.Moving:
+//							yield return new WaitUntil(() => CurrentPlayer.CurrentState!=Player.State.Moving);
+//							break;
+//						case Player.State.OfferToBuyProperty:
+//							yield return new WaitUntil(() => CurrentPlayer.CurrentState!=Player.State.OfferToBuyProperty);
+//							Debug.Log("САНЯ ХУЙ СОСИ");
+//							break;
+//						case Player.State.OfferToBuyHouse:
+//							yield return new WaitUntil(() => CurrentPlayer.CurrentState!=Player.State.OfferToBuyHouse);
+//							break;
+//						case Player.State.OfferToMortgageProperty:
+//							yield return new WaitUntil(() => CurrentPlayer.CurrentState!=Player.State.OfferToMortgageProperty);
+//							break;
+//						case Player.State.OfferToRedeemProperty:
+//							yield return new WaitUntil(() => CurrentPlayer.CurrentState!=Player.State.OfferToRedeemProperty);
+//							break;
+//						case Player.State.OfferToSellHouse:
+//							yield return new WaitUntil(() => CurrentPlayer.CurrentState!=Player.State.OfferToSellHouse);
+//							break;
+						case Player.State.EndTurn:
+							_players.Enqueue(CurrentPlayer);
+							CurrentPlayer = _players.Dequeue();
 							CurrentPlayer.CurrentState = Player.State.StartTurn;
-						break;
-				}
-				if (CurrentPlayer.InJail && CurrentPlayer.CurrentState == Player.State.StartTurn)
-					yield return StartCoroutine(JailManager.TurnInJail());
+							yield return StartCoroutine(_uIManager.StartTurn());
+							break;
+						case Player.State.Idle:
+							if (DiceRoller.IsDouble())
+							{
+								if (DiceRoller.DoublesInARow == 3)
+								{
+									JailManager.PutPLayerInJail();
+									DiceRoller.DoublesInARow = 0;
+								}
+								else
+								{
+									CurrentPlayer.CurrentState = Player.State.StartTurn;
+								}
+							}
+
+							break;
+						case Player.State.Bankrupt:
+							CurrentPlayer = _players.Dequeue();
+							CurrentPlayer.CurrentState = Player.State.StartTurn;
+							if (_players.Count==0)
+							{
+								GameInProgress = false;
+								_uIManager.EndGame();
+							}
+							else
+								yield return StartCoroutine(_uIManager.StartTurn());
+							break;
+					}
+
+					if (CurrentPlayer.InJail && CurrentPlayer.CurrentState == Player.State.StartTurn)
+						yield return StartCoroutine(JailManager.TurnInJail());
+					break;
+				case States.Auction:
+					yield return new WaitWhile(() => State == States.Auction);
+					break;
+				case States.Trade:
+					yield return new WaitWhile(() => State == States.Trade);
+					break;
 			}
-			if(_state == States.Auction)
-				yield return new WaitUntil((() => _state != States.Auction));
-			if(_state == States.Trade)
-				yield return new WaitUntil((() => _state != States.Trade));
+
 			yield return null;
 		}
 	}
@@ -176,15 +202,15 @@ public class GameManager : MonoBehaviour
 	public IEnumerator RollDice()
 	{
 		DiceRoller.RollDice();
+		TextLog.LogText(string.Format("{0} выбросил {1} и {2}",CurrentPlayer, DiceRoller.Dice1, DiceRoller.Dice2));
 		yield return StartCoroutine(CurrentPlayer.MoveTo(Board[NextLocation()]));
 	}
 	
 	public void BuyProperty(Ownable property)
 	{
-		CurrentPlayer.BalanceManager.GetMoneyFromPlayer(property.PurchasePrice);
+		if (!CurrentPlayer.BalanceManager.GetMoneyFromPlayer(property.PurchasePrice)) return;
 		CurrentPlayer.Owned.Add(property);
 		property.SetOwner(CurrentPlayer);
-		Debug.Log(CurrentPlayer.BalanceManager.Balance);
 	}
 
 	public void MortgageProperty(Ownable property)
@@ -193,7 +219,6 @@ public class GameManager : MonoBehaviour
 		CurrentPlayer.Owned.Remove(property);
 		CurrentPlayer.Mortgaged.Add(property);
 		property.Mortgage();
-		Debug.Log(CurrentPlayer.BalanceManager.Balance);
 	}
 	public void RedeemProperty(Ownable property)
 	{
@@ -201,7 +226,6 @@ public class GameManager : MonoBehaviour
 		CurrentPlayer.Owned.Add(property);
 		CurrentPlayer.Mortgaged.Remove(property);
 		property.UnMortgage();
-		Debug.Log(CurrentPlayer.BalanceManager.Balance);
 	}
 
 	public bool CanPlayerUpgradeAnything()
@@ -216,7 +240,6 @@ public class GameManager : MonoBehaviour
 	{
 		CurrentPlayer.BalanceManager.GetMoneyFromPlayer(property.HousePrice * numOfHouses);
 		property.BuildHouses(numOfHouses);
-		Debug.Log(CurrentPlayer.BalanceManager.Balance);
 	}
 
 	public bool CanPlayerSellAnything()
@@ -230,15 +253,12 @@ public class GameManager : MonoBehaviour
 	{
 		CurrentPlayer.BalanceManager.GiveMoneyToPlayer((int) (property.HousePrice * numOfHouses / 2));
 		property.SellHouse(numOfHouses);
-		Debug.Log(CurrentPlayer.BalanceManager.Balance);
 	}
 
-	public IEnumerator StartAuction()
+	public void StartAuction()
 	{
-		_state = States.Auction;
-		yield return StartCoroutine(
-			AuctionManager.StartAuction(CurrentPlayer.CurrentLocation as Ownable, CurrentPlayer));
-		_state = States.Default;
+		State = States.Auction;
+		StartCoroutine(AuctionManager.StartAuction((Ownable)CurrentPlayer.CurrentLocation, CurrentPlayer));
 	}
 	public void GivePropertyToPlayer(Player player, Ownable property)
 	{
@@ -250,7 +270,7 @@ public class GameManager : MonoBehaviour
 		from.Owned.Remove(property);
 		to.Owned.Add(property);
 		property.SetOwner(to);
-		Debug.Log(string.Format("{0} передаётся от игрока {1} к игроку {2}",property.name, from.name, to.name));
+		TextLog.LogText(string.Format("{0} передаётся от игрока {1} к игроку {2}",property.name, from.name, to.name));
 	}
 
 	public void TransfermortgagedPropertyBetweenPlayers(Player from, Player to, Ownable property)
@@ -258,7 +278,7 @@ public class GameManager : MonoBehaviour
 		from.Mortgaged.Remove(property);
 		to.Mortgaged.Add(property);
 		property.SetOwner(to);
-		Debug.Log(string.Format("{0} передаётся от игрока {1} к игроку {2}",property.name, from.name, to.name));
+		TextLog.LogText(string.Format("{0} передаётся от игрока {1} к игроку {2}",property.name, from.name, to.name));
 	}
 	public void BankruptByPlayer(Player bankruptPlayer, Player winPlayer)
 	{
@@ -303,9 +323,9 @@ public class GameManager : MonoBehaviour
 
 		foreach (var property in propertiesForAuction)
 		{
-			_state = States.Auction;
+			State = States.Auction;
 			yield return AuctionManager.StartAuction(property, bankruptPlayer);
-			_state = States.Default;
+			State = States.Default;
 		}
 	}
 }

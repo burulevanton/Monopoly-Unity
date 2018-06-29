@@ -8,15 +8,26 @@ public abstract class Ownable : Field
 
 	protected Player Owner;
 
+	public Player Owner1
+	{
+		get { return Owner; }
+	}
+
+	private TextLog _textLog;
+	public GameObject OwnerColor;
+	
 	public void SetOwner(Player player)
 	{
+		OwnerColor.SetActive(true);
+		OwnerColor.GetComponent<Renderer>().material.color = player.Color;
 		Owner = player;
 	}
 
-	void Awake()
+	void Start()
 	{
 		Owner = null;
 		IsMortgage = false;
+		_textLog = GameObject.Find("TextLog").GetComponent<TextLog>();
 	}
 
 	[SerializeField] private int _purchasePrice;
@@ -25,7 +36,7 @@ public abstract class Ownable : Field
 	{
 		get { return _purchasePrice; }
 	}
-
+	
 	protected bool IsMortgage;
 
 	public void Mortgage()
@@ -40,7 +51,7 @@ public abstract class Ownable : Field
 
 	public override void LandOn(Player player)
 	{
-		Debug.Log(string.Format("Вы попали на поле {0}",this.Name));
+		_textLog.LogText(string.Format("Вы попали на поле {0}",this.Name));
 		if (this.Owner == null)
 		{
 			UIManager uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
@@ -49,7 +60,7 @@ public abstract class Ownable : Field
 		else
 		{
 			if(this.Owner == player)
-				Debug.Log("Вы уже купили данное поле" + string.Format("текущая аренда {0}",Rent()));
+				_textLog.LogText("Вы уже купили данное поле" + string.Format("текущая аренда {0}",Rent()));
 			else
 			{
 				if (!this.IsMortgage)

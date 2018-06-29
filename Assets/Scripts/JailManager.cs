@@ -23,7 +23,7 @@ public class JailManager : MonoBehaviour
 	{
 		_gameManager.CurrentPlayer.InJail = false;
 		_gameManager.CurrentPlayer.NumOfTurnsInJail = 0;
-		_gameManager.CurrentPlayer.BalanceManager.GetMoneyFromPlayer(50); //todo инфа о выходе
+		_gameManager.CurrentPlayer.BalanceManager.GetMoneyFromPlayer(50); //todo инфа о выходе и нормальное перемещение
 		StartCoroutine(_gameManager.RollDice());
 	}
 

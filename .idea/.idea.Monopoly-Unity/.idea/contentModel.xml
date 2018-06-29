@@ -26,12 +26,16 @@
             <e p="Utility.cs" t="Include" />
           </e>
           <e p="GameManager.cs" t="Include" />
+          <e p="HouseUI.cs" t="Include" />
           <e p="ItemButton.cs" t="Include" />
           <e p="ItemList.cs" t="Include" />
           <e p="JailManager.cs" t="Include" />
           <e p="JailUI.cs" t="Include" />
+          <e p="Menu.cs" t="Include" />
           <e p="MortgageProperty.cs" t="Include" />
           <e p="Player.cs" t="Include" />
+          <e p="PlayerInfo.cs" t="Include" />
+          <e p="PlayerInfoManager.cs" t="Include" />
           <e p="RedeemProperty.cs" t="Include" />
           <e p="SellHouse.cs" t="Include" />
           <e p="TextLog.cs" t="Include" />
