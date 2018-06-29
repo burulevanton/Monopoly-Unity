@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Assertions.Comparers;
+using UnityEngine.UI;
 
 public abstract class Ownable : Field
 {
 
 	protected Player Owner;
+	public float YOffset;
+	public float XOffset;
 
 	public Player Owner1
 	{
@@ -23,14 +27,17 @@ public abstract class Ownable : Field
 		Owner = player;
 	}
 
+	protected GameManager GameManager;
 	void Start()
 	{
+		GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 		Owner = null;
 		IsMortgage = false;
 		_textLog = GameObject.Find("TextLog").GetComponent<TextLog>();
 	}
 
 	[SerializeField] private int _purchasePrice;
+	public Sprite Image;
 
 	public int PurchasePrice
 	{
@@ -69,5 +76,30 @@ public abstract class Ownable : Field
 		}
 	}
 
-	protected abstract int Rent();
+	public abstract int Rent();
+
+	public ImageBoardInfo ImageBoardInfo;
+
+	private void OnMouseEnter()
+	{
+		MouseEnter();
+	}
+
+	private void OnMouseExit()
+	{
+		MouseExit();
+	}
+
+	public void MouseEnter()
+	{
+		if (ImageBoardInfo.isActiveAndEnabled && ImageBoardInfo.Property == this || !GameManager.GameInProgress) return;
+		ImageBoardInfo.transform.position = Input.mousePosition + new Vector3(XOffset, YOffset, 0);
+		ImageBoardInfo.SetProperty(this);
+		ImageBoardInfo.gameObject.SetActive(true);
+	}
+
+	public void MouseExit()
+	{
+		ImageBoardInfo.gameObject.SetActive(false);
+	}
 }

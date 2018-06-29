@@ -7,7 +7,7 @@ public class Railway : Ownable
 
     [SerializeField] private Railway[] otherRailways;
     
-    protected override int Rent()
+    public override int Rent()
     {
         var rent = 25;
         foreach (var railway in otherRailways)

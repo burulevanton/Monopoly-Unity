@@ -18,6 +18,7 @@ public class SellHouse : MonoBehaviour
 	public GameObject ChooseAmount;
 	private GameManager _gameManager;
 	public Text Info;
+	public Image Image;
 	//todo добавить отмену
 
 	void Awake()
@@ -65,6 +66,7 @@ public class SellHouse : MonoBehaviour
 	{
 		ChooseAmount.gameObject.SetActive(true);
 		Slider.maxValue = maxValue;
+		Image.sprite = _choosenProperty.Image;
 		CheckValid();
 	}
 	public void CheckValid()

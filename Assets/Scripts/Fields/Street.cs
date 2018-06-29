@@ -29,7 +29,7 @@ public class Street : Ownable
 		_streetsWithColor.Add(this);
 	}
 	
-	protected override int Rent()
+	public override int Rent()
 	{
 		return _rents[_currentUpgradeLevel] * (CanDouble() ? 2 : 1);
 	}

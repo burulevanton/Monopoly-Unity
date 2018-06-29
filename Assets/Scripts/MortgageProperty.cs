@@ -11,6 +11,7 @@ public class MortgageProperty : MonoBehaviour
 	public GameObject Question;
 	public Text Info;
 	public RectTransform Button;
+	public Image Image;
 
 	private Ownable _choosenProperty;
 	private ItemList _itemList;
@@ -77,5 +78,6 @@ public class MortgageProperty : MonoBehaviour
 	private void ShowQuestion()
 	{
 		Info.text = string.Format("Вы получите - {0}Р", _choosenProperty.PurchasePrice / 2);
+		Image.sprite = _choosenProperty.Image;
 	}
 }

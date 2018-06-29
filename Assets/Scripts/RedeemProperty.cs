@@ -13,6 +13,7 @@ public class RedeemProperty : MonoBehaviour
 	public Text Info;
 	public RectTransform Button;
 	public Button AcceptButton;
+	public Image Image;
 
 	private Ownable _choosenProperty;
 	private ItemList _itemList;
@@ -90,5 +91,7 @@ public class RedeemProperty : MonoBehaviour
 			Info.text = "У вас недостаточно средств для выкупа";
 			AcceptButton.interactable = false;
 		}
+
+		Image.sprite = _choosenProperty.Image;
 	}
 }

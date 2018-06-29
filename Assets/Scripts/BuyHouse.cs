@@ -20,6 +20,8 @@ public class BuyHouse : MonoBehaviour
 	public Text Info;
 	public Text Error;
 	private bool _isValid;
+
+	public Image Image;
 	//todo добавить отмену
 
 	void Awake()
@@ -93,6 +95,7 @@ public class BuyHouse : MonoBehaviour
 	{
 		ChooseAmount.gameObject.SetActive(true);
 		Slider.maxValue = maxValue;
+		Image.sprite = _choosenProperty.Image;
 		CheckValid();
 	}
 	public void CheckValid()

@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 	public AuctionManager AuctionManager;
 	public TradeManager TradeManager;
 	public TextLog TextLog;
-	public bool GameInProgress;
+	public bool GameInProgress = false;
 	private Queue<Player> _players;
 	private UIManager _uIManager;
 	public List<Player> ActivePlayers;

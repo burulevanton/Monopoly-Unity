@@ -10,6 +10,7 @@ public class BuyPropertyQuestion : MonoBehaviour
 	public Button Accept;
 	public Button Decline;
 	public Text Text;
+	public Image Image;
 
 	private GameManager _gameManager;
 	
@@ -23,6 +24,7 @@ public class BuyPropertyQuestion : MonoBehaviour
 	{
 		var property = (Ownable) _gameManager.CurrentPlayer.CurrentLocation;
 		Text.text = string.Format("Стоимость - {0}Р", property.PurchasePrice);
+		Image.sprite = property.Image;
 	}
 	public void BuyProperty()
 	{
