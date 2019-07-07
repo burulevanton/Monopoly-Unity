@@ -7,12 +7,11 @@ public class PlayerInfoManager : MonoBehaviour {
 
 	private GameManager _gameManager;
 	public PlayerInfo[] PlayerInfo;
-	private Vector3 _location;
+	public GameObject Location;
 
 	void Awake()
 	{
 		_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-		_location = new Vector3(955.22f, 585.25f, 0);
 	}
 
 	public IEnumerator SetPlayerInfo()
@@ -34,11 +33,11 @@ public class PlayerInfoManager : MonoBehaviour {
 		_playerInfo.GetComponentInChildren<Button>().gameObject.SetActive(false);
 		_gameManager.CurrentPlayer.CurrentState = Player.State.Moving;
 		Vector3 startPosition = _playerInfo.transform.position;
-		Vector3 endPosition = _location;
+		Vector3 endPosition = Location.transform.position;
 		float pathLength = Vector2.Distance(startPosition, endPosition);
 		float totalTimeForPath = pathLength / 1500f;
 		float lastSwitchTime = Time.time;
-		while (_playerInfo.transform.position != _location)
+		while (_playerInfo.transform.position != Location.transform.position)
 		{
 			float currentTimeOnPath = Time.time - lastSwitchTime;
 			_playerInfo.transform.position = Vector2.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
@@ -54,7 +53,7 @@ public class PlayerInfoManager : MonoBehaviour {
 		var _playerInfo = PlayerInfo[_gameManager.ActivePlayers.IndexOf(_gameManager.CurrentPlayer)];
 		var currentState = _gameManager.CurrentPlayer.CurrentState;
 		_gameManager.CurrentPlayer.CurrentState = Player.State.Moving;
-		Vector3 startPosition = _location;
+		Vector3 startPosition = Location.transform.position;
 		Vector3 endPosition = _playerInfo.Location;
 		float pathLength = Vector2.Distance(startPosition, endPosition);
 		float totalTimeForPath = pathLength / 1500f;

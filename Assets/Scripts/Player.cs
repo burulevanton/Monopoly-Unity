@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-using UnityScript.Lang;
 using Array = System.Array;
 
 public class Player : MonoBehaviour
